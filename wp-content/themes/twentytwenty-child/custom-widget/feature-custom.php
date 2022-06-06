@@ -191,7 +191,7 @@ class Feature_custom extends Widget_Base
 
             .feature-custom-gorup-items {
                 display: flex;
-                justify-content: flex-start;
+                justify-content: center;
                 flex-wrap: wrap;
                 margin-top: 75px;
             }
@@ -233,7 +233,15 @@ class Feature_custom extends Widget_Base
                 color: #262626;
             }
 
-            @media only screen and (max-width: 1200px) {}
+            @media only screen and (max-width: 1200px) {
+                .feature-custom-box-image {
+                    width: 28%;
+                    margin: 0.4%;
+                    margin-bottom: 50px;
+                    display: flex;
+                    align-items: center;
+                }
+            }
 
             @media only screen and (max-width: 800px) {
                 .feature-custom-title {

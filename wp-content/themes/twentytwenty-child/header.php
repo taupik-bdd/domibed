@@ -7,9 +7,11 @@
 	<?php wp_head(); ?>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <style>
-	<?php include 'wp-content/themes/twentytwenty-child/style.css' ?>.section-inner {
+	<?php include 'wp-content/themes/twentytwenty-child/style.css' ?>
+</style>
+<style>
+	.section-inner {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -17,6 +19,7 @@
 		width: 100%;
 		max-width: 1440px;
 		padding: 0 50px;
+		background-color: #fff;
 	}
 
 	.header-items-left {
@@ -26,9 +29,8 @@
 
 	.header-items-left-logo {
 		margin-right: 20px;
-		height: 40px;
-		width: 70px;
-		background-color: gray;
+		height: 38px;
+		width: 108px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -46,6 +48,7 @@
 		cursor: pointer;
 		flex-wrap: wrap;
 		font-weight: 500;
+		color: yellow !important;
 	}
 
 
@@ -106,9 +109,17 @@
 	}
 
 	.header-custom {
-		margin-bottom: -9em;
 		display: flex;
 		justify-content: center;
+		width: 100vw;
+		position: fixed !important;
+		top: 0;
+		left: 0;
+		height: 82px !important;
+		align-items: center;
+		z-index: 10;
+		background-color: green I !important;
+		margin-top: 3em;
 	}
 
 	@media only screen and (max-width: 800px) {
@@ -158,14 +169,20 @@
 	<?php
 	wp_body_open();
 	?>
-	<header id="site-header" class="header-footer-group header-custom">
+	<header id="site-header" class=" header-custom">
 		<div class="header-inner section-inner">
 			<div class="header-items-left">
 				<div class="header-items-menu-mobile" id="menu-mobile" name="menu-mobile">
 					<i class=" fa-solid fa-bars mobile-icon-menu" onclick="onClickMenu()"></i>
 				</div>
 				<div class="header-items-left-logo">
-					Logo
+
+					<?php
+					// Site title or logo.
+					twentytwenty_site_logo();
+
+					?>
+
 				</div>
 				<!-- <ul class="header-items-left-menu mobile-hide">
 					<li>Matresses</li>

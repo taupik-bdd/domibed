@@ -17,11 +17,30 @@
     src: url("/wp-content/themes/twentytwenty-child/fonts/Montserrat-Light.ttf") format("truetype");
 }
 
+
+
+/* color */
+.color-primary{
+    color:#E99972 !important;
+}
+.color-secoundary{
+    color:#33A595 !important;
+}
+
+/* background-color */
+.bg-primary{
+    background-color:#E99972 !important;
+}
+.bg-secoundary{
+    background-color:#33A595 !important;
+}
+
+
 header, body, div, h1,h2,h3,h4,h5,
 .widget_text p, .widget_text ol, 
 .widget_text ul, .widget_text dl, 
 .widget_text dt, .widget-content .rssSummary{
-    font-family: "Montserrat" !important;
+
 }
 
 section.top-no-gap, .post-inner{

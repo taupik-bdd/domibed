@@ -27,10 +27,10 @@
                 </ul><!-- .footer-social -->
             </div>
             <div class="col-md-5">
-                <?php dynamic_sidebar( 'sidebar-2' ); ?>
+                <?php dynamic_sidebar('sidebar-2'); ?>
             </div>
             <div class="col-md-3">
-                <?php dynamic_sidebar( 'sidebar-1' ); ?>
+                <?php dynamic_sidebar('sidebar-1'); ?>
             </div>
         </div>
     </div>

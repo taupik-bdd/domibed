@@ -5,114 +5,213 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
+<style>
+	<?php include 'wp-content/themes/twentytwenty-child/style.css' ?>.section-inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 82px;
+		width: 100%;
+		max-width: 1440px;
+		padding: 0 50px;
+	}
+
+	.header-items-left {
+		display: flex;
+		align-items: center;
+	}
+
+	.header-items-left-logo {
+		margin-right: 20px;
+		height: 40px;
+		width: 70px;
+		background-color: gray;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 2em;
+		color: #fff;
+	}
+
+	.header-items-left-menu {
+		display: flex;
+		align-items: center;
+		list-style-type: none;
+		font-size: 14px;
+		font-family: 'Quicksand';
+		margin-right: 20px;
+		cursor: pointer;
+		flex-wrap: wrap;
+		font-weight: 500;
+	}
+
+
+	input[name="input-search"] {
+		height: 40px;
+		width: 302px;
+		border-width: 0;
+		color: #074ee8;
+		padding-left: 30px;
+		border-radius: 100px;
+		background-color: #F2F2F2;
+
+	}
+
+	.header-items-left-search {
+		position: relative;
+		display: flex;
+		align-items: center;
+	}
+
+	.icon-search {
+		position: absolute;
+		top: 40%;
+		margin-left: 10px;
+		font-size: 14px;
+	}
+
+	.header-items-right {
+		display: flex;
+		margin-left: 20px;
+	}
+
+	.header-items-right-items {
+		cursor: pointer;
+		margin-right: 37px;
+		font-size: 20px;
+	}
+
+	.header-items-menu-mobile {
+		display: none;
+	}
+
+	.mobile-icon-menu {
+		font-size: 30px;
+		margin-right: 30px;
+	}
+
+	.modal-mobile-menu {
+		display: none;
+		position: fixed;
+		width: 100%;
+		height: 86%;
+		z-index: 10;
+		bottom: 0;
+		left: 0;
+		background-color: #fff;
+		padding: 30px 20px;
+	}
+
+	.header-custom {
+		margin-bottom: -9em;
+		display: flex;
+		justify-content: center;
+	}
+
+	@media only screen and (max-width: 800px) {
+		.header-custom {
+			margin-bottom: -6em;
+		}
+
+		.mobile-hide {
+			display: none !important;
+		}
+
+		.header-items-menu-mobile {
+			display: block;
+		}
+
+		.header-items-left-logo {
+			margin-right: 30px;
+			height: 30px;
+			width: 60px;
+		}
+
+		.header-items-left-search {
+			height: 30px;
+			width: 100%;
+		}
+
+		.icon-search {
+			top: 43%;
+		}
+
+		input[name="input-search"] {
+			height: 100%;
+			width: 100%;
+		}
+
+		.header-items-left-menu {
+			padding-top: 30px;
+			flex-direction: column;
+			margin: 0;
+			align-items: flex-start;
+		}
+	}
+</style>
 
 
 <body <?php body_class(); ?>>
-	<style>
-		.container-header {
-			display: flex;
-			justify-content: space-between;
-		}
-
-		.header-flex-menu {
-			display: flex;
-			justify-content: center;
-		}
-	</style>
 	<?php
 	wp_body_open();
 	?>
-	<header id="site-header" class="header-footer-group">
-		<div class="header-inner section-inner container-header">
-			<div class="header-flex-menu">
-				<div class="header-flex-menu-logo">
-					<?php
-					// Site title or logo.
-					twentytwenty_site_logo();
-					?>
+	<header id="site-header" class="header-footer-group header-custom">
+		<div class="header-inner section-inner">
+			<div class="header-items-left">
+				<div class="header-items-menu-mobile" id="menu-mobile" name="menu-mobile">
+					<i class=" fa-solid fa-bars mobile-icon-menu" onclick="onClickMenu()"></i>
 				</div>
-				<div class="header-flex-menu-menu">
+				<div class="header-items-left-logo">
+					Logo
+				</div>
+				<!-- <ul class="header-items-left-menu mobile-hide">
+					<li>Matresses</li>
+					<li>Toppers</li>
+					<li>Pillow & Bolster</li>
+					<li>Bed Frame</li>
+					<li>Bedding</li>
+					<li>Bundles</li>
+					<li>Blog</li>
+				</ul> -->
+				<ul class="header-items-left-menu color-primary mobile-hide ">
 					<?php
-					if (has_nav_menu('primary') || !has_nav_menu('expanded')) {
-					?>
-						<nav class="primary-menu-wrapper" aria-label="<?php echo esc_attr_x('Horizontal', 'menu', 'twentytwenty'); ?>">
-							<ul class="primary-menu reset-list-style">
-								<?php
-								if (has_nav_menu('primary')) {
-									wp_nav_menu(
-										array(
-											'container'  => '',
-											'items_wrap' => '%3$s',
-											'theme_location' => 'primary',
-										)
-									);
-								} elseif (!has_nav_menu('expanded')) {
-									wp_list_pages(
-										array(
-											'match_menu_classes' => true,
-											'show_sub_menu_icons' => true,
-											'title_li' => false,
-											'walker'   => new TwentyTwenty_Walker_Page(),
-										)
-									);
-								}
-								?>
-							</ul>
-						</nav><!-- .primary-menu-wrapper -->
-					<?php
-					}
+					if (has_nav_menu('primary')) {
 
-					if (true === $enable_header_search || has_nav_menu('expanded')) {
-					?>
-						<div class="header-toggles hide-no-js">
-							<?php
-							if (has_nav_menu('expanded')) {
-							?>
-								<div class="toggle-wrapper nav-toggle-wrapper has-expanded-menu">
-									<button class="toggle nav-toggle desktop-nav-toggle" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
-										<span class="toggle-inner">
-											<span class="toggle-text"><?php _e('Menu', 'twentytwenty'); ?></span>
-											<span class="toggle-icon">
-												<?php twentytwenty_the_theme_svg('ellipsis'); ?>
-											</span>
-										</span>
-									</button>
-									<!-- .nav-toggle -->
-								</div><!-- .nav-toggle-wrapper -->
+						wp_nav_menu(
+							array(
+								'container'  => '',
+								'items_wrap' => '%3$s',
+								'theme_location' => 'primary',
+							)
+						);
+					} elseif (!has_nav_menu('expanded')) {
 
-							<?php
-							}
-
-							if (true === $enable_header_search) {
-							?>
-
-								<div class="toggle-wrapper search-toggle-wrapper">
-
-									<button class="toggle search-toggle desktop-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
-										<span class="toggle-inner">
-											<?php twentytwenty_the_theme_svg('search'); ?>
-											<span class="toggle-text"><?php _ex('Search', 'toggle text', 'twentytwenty'); ?></span>
-										</span>
-									</button>
-									<!-- .search-toggle -->
-								</div>
-
-							<?php
-							}
-							?>
-
-						</div><!-- .header-toggles -->
-					<?php
+						wp_list_pages(
+							array(
+								'match_menu_classes' => true,
+								'show_sub_menu_icons' => true,
+								'title_li' => false,
+								'walker'   => new TwentyTwenty_Walker_Page(),
+							)
+						);
 					}
 					?>
+				</ul>
+				<div class="header-items-left-search mobile-hide">
+					<input type="text" name="input-search" class="header-items-left-search" placeholder="Search product..." />
+					<i class="fa-solid fa-magnifying-glass icon-search"></i>
 				</div>
-				<div class="header-flex-menu-search">search</div>
 			</div>
-			<div class="header-flex-icon">
-				flex 2
+			<div class="header-items-right">
+				<i class="fa-solid fa-user header-items-right-items "></i>
+				<i class="fa-solid fa-heart header-items-right-items"></i>
+				<i class="fa-solid fa-bag-shopping header-items-right-items"></i>
 			</div>
-		</div><!-- .header-inner -->
+		</div>
+		<!-- .header-inner -->
 
 		<?php
 		// Output the search modal (if it is activated in the customizer).
@@ -120,8 +219,37 @@
 			get_template_part('template-parts/modal-search');
 		}
 		?>
-
+		<div class="modal-mobile-menu">
+			<div class="header-items-left-search">
+				<input type="text" name="input-search" class="header-items-left-search" placeholder="Search product..." />
+				<i class="fa-solid fa-magnifying-glass icon-search"></i>
+			</div>
+			<ul class="header-items-left-menu">
+				<li>Matresses</li>
+				<li>Toppers</li>
+				<li>Pillow & Bolster</li>
+				<li>Bed Frame</li>
+				<li>Bedding</li>
+				<li>Bundles</li>
+				<li>Blog</li>
+			</ul>
+		</div>
 	</header><!-- #site-header -->
+
+	<script>
+		// function onClickMenu() {
+		// 	alert('cja');
+		// 	$(".modal-mobile-menu").css("display", "flex");
+		// }
+
+
+		// $(function() {
+		// 	$("menu-mobile").on('click', function() {
+		// 		alert("Success !!!");
+
+		// 	})
+		// })
+	</script>
 
 	<?php
 	// Output the menu modal.

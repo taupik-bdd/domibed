@@ -140,7 +140,7 @@ class Custom_carousel extends Widget_Base
                 <i class="fa fa-chevron-left prev"></i>
                 <i class="fa fa-chevron-right next"></i>
             </div>
-            <div class="carouselna" data-show_d="1" data-show_m="1">
+            <div class="carouselna" data-show_d="3" data-show_m="1">
                 <?php foreach ($settings['list'] as $key => $value) : ?>
                     <div class="list-carousel">
                         <div class="content-carousel">

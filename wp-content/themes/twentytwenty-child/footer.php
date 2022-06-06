@@ -1,8 +1,9 @@
-			<footer class="header-footer-group">
-			
-            </footer><!-- #site-footer -->
-            
-        <?php wp_footer(); ?>
+<footer class="header-footer-group">
 
-	</body>
+</footer><!-- #site-footer -->
+
+<?php wp_footer(); ?>
+
+</body>
+
 </html>

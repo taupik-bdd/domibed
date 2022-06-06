@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 6.0.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-06-01 11:29:11+0000\n"
+"PO-Revision-Date: 2022-06-05 03:03:38+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -295,6 +295,23 @@ msgctxt "block description"
 msgid "Displays the name of the author of the comment."
 msgstr "Menampilkan nama penulis komentar."
 
+#: wp-includes/js/dist/block-library.js:31261
+#: wp-includes/js/dist/block-library.js:31302 wp-admin/includes/upgrade.php:273
+msgid "A WordPress Commenter"
+msgstr "Seorang Komentator WordPress"
+
+#. translators: %s: Post title.
+#: wp-includes/blocks/comments-title.php:69
+#: wp-includes/js/dist/block-library.js:9623
+msgid "Responses to %s"
+msgstr "Tanggapan atas %s"
+
+#. translators: %s: Post title.
+#: wp-includes/blocks/comments-title.php:66
+#: wp-includes/js/dist/block-library.js:9620
+msgid "Response to %s"
+msgstr "Tanggapan atas %s"
+
 #: wp-includes/js/dist/block-library.js:7767
 #: wp-includes/blocks/comment-date/block.json
 msgctxt "block title"
@@ -306,6 +323,84 @@ msgstr "Tanggal Komentar"
 msgctxt "block title"
 msgid "Comment Content"
 msgstr "Konten Komentar"
+
+#: wp-trackback.php:130
+msgid "There is already a ping from that URL for this post."
+msgstr "Sudah ada ping dari URL tersebut untuk pos ini."
+
+#: wp-login.php:915
+msgid "The password cannot be a space or all spaces."
+msgstr "Kata sandi tidak boleh spasi atau semua spasi."
+
+#. translators: %s: Database name.
+#: wp-includes/wp-db.php:1189
+msgid "The database server could be connected to (which means your username and password is okay) but the %s database could not be selected."
+msgstr "Server basis data dapat disambungkan (yang berarti nama pengguna dan kata sandi Anda baik-baik saja) tetapi basis data %s tidak dapat dipilih."
+
+#: wp-includes/wp-db.php:1185
+msgid "Cannot select database"
+msgstr "Tidak dapat memilih basis data"
+
+#. translators: %s: URL to media library.
+#: wp-includes/widgets/class-wp-widget-media.php:501
+msgid "That file cannot be found. Check your <a href=\"%s\">media library</a> and make sure it was not deleted."
+msgstr "Berkas tersebut tidak dapat ditemukan. Periksa <a href=\"%s\">pustaka media</a> Anda dan pastikan berkas tidak dihapus."
+
+#. translators: %s: A list of valid video file extensions.
+#: wp-includes/widgets/class-wp-widget-media-video.php:51
+msgid "Sorry, the video at the supplied URL cannot be loaded. Please check that the URL is for a supported video file (%s) or stream (e.g. YouTube and Vimeo)."
+msgstr "Maaf, pada video URL yang disediakan tidak dapat dimuat. Mohon periksa apakah URL untuk berkas video yang didukung (%s) atau streaming (mis. YouTube dan Vimeo)."
+
+#. translators: %s: URL to media library.
+#: wp-includes/widgets/class-wp-widget-media-video.php:44
+msgid "That video cannot be found. Check your <a href=\"%s\">media library</a> and make sure it was not deleted."
+msgstr "Video tersebut tidak dapat ditemukan. Periksa <a href=\"%s\">pustaka media</a> Anda dan pastikan video tidak dihapus."
+
+#. translators: %s: URL to media library.
+#: wp-includes/widgets/class-wp-widget-media-image.php:44
+msgid "That image cannot be found. Check your <a href=\"%s\">media library</a> and make sure it was not deleted."
+msgstr "Gambar tersebut tidak dapat ditemukan. Periksa <a href=\"%s\">pustaka media</a> Anda dan pastikan gambar tidak dihapus."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-block-patterns-controller.php:207
+msgid "Determines whether the pattern is visible in inserter."
+msgstr "Menentukan apakah pola terlihat di penyisip."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-block-patterns-controller.php:177
+msgid "The pattern viewport width for inserter preview."
+msgstr "Lebar area tampilan pola untuk pratinjau penyisip."
+
+#: wp-includes/functions.php:1603
+msgid "<strong>Error</strong>: This is not a valid feed template."
+msgstr "<strong>Eror</strong>: Ini bukan templat feed yang sah."
+
+#: wp-includes/customize/class-wp-customize-nav-menu-item-control.php:133
+#: wp-admin/includes/class-walker-nav-menu-edit.php:235
+msgid "The description will be displayed in the menu if the active theme supports it."
+msgstr "Deskripsi akan ditampilkan di menu jika tema aktif mendukungnya."
+
+#: wp-includes/class-wp-xmlrpc-server.php:6966
+msgid "A title on that page cannot be found."
+msgstr "Judul pada halaman itu tidak dapat ditemukan."
+
+#: wp-includes/class-wp-theme.php:993
+msgctxt "color scheme"
+msgid "Light"
+msgstr "Terang"
+
+#: wp-includes/class-wp-theme.php:992
+msgctxt "color scheme"
+msgid "Dark"
+msgstr "Gelap"
+
+#: wp-includes/class-wp-theme.php:285
+msgid "<strong>Error</strong>: The themes directory is either empty or does not exist. Please check your installation."
+msgstr "<strong>Eror</strong>: Direktori tema kosong atau tidak ditemukan. Mohon periksa instalasi Anda."
+
+#: wp-includes/class-wp-image-editor-gd.php:92
+#: wp-includes/class-wp-image-editor-gd.php:101
+#: wp-includes/class-wp-image-editor-imagick.php:132
+msgid "File does not exist?"
+msgstr "Berkas tidak ditemukan?"
 
 #: wp-includes/script-loader.php:1271
 msgid "Use Site Editor"
@@ -8100,6 +8195,22 @@ msgid_plural "Your theme has %s widget areas, but this particular page does not 
 msgstr[0] "Tema Anda memiliki %s area widget, namun halaman ini tidak menampilkannya."
 msgstr[1] "Tema Anda memiliki %s area widget, namun halaman ini tidak menampilkannya."
 
+#: wp-includes/class-wp-customize-widgets.php:774
+msgid "Your theme has 1 widget area, but this particular page does not display it."
+msgstr "Tema Anda memiliki 1 area widget, namun halaman ini tidak menampilkannya."
+
+#. translators: %s: The number of other widget areas registered but not
+#. rendered.
+#: wp-includes/class-wp-customize-widgets.php:759
+msgid "Your theme has %s other widget area, but this particular page does not display it."
+msgid_plural "Your theme has %s other widget areas, but this particular page does not display them."
+msgstr[0] "Tema Anda memiliki %s area widget lainnya, namun halaman ini tidak menampilkannya."
+msgstr[1] "Tema Anda memiliki %s area widget lainnya, namun halaman ini tidak menampilkannya."
+
+#: wp-includes/class-wp-customize-widgets.php:750
+msgid "Your theme has 1 other widget area, but this particular page does not display it."
+msgstr "Tema Anda memiliki 1 area widget lainnya, namun halaman ini tidak menampilkannya."
+
 #: wp-includes/option.php:2121
 msgid "This address is used for admin purposes, like new user notification."
 msgstr "Alamat ini dipakai untuk keperluan administrasi, misalnya notifikasi pengguna baru."
@@ -8538,6 +8649,10 @@ msgstr "Maaf, Anda tidak diizinkan membuat pos tertempel."
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:144
 msgid "Reassign the deleted user's posts and links to this user ID."
 msgstr "Alihkan pos dan tautan pengguna yang dihapus ke ID pengguna ini."
+
+#: wp-includes/script-loader.php:1236
+msgid "This theme does not support video headers on this page. Navigate to the front page or another page that supports video headers."
+msgstr "Tema ini tidak mendukung header video di halaman ini. Beralih ke beranda atau halaman lainnya yang mendukung header video."
 
 #: wp-includes/customize/class-wp-customize-media-control.php:231
 msgid "Choose video"
@@ -10335,6 +10450,12 @@ msgstr "Umpan %1$s %2$s %3$s %4$s"
 msgid "Close dialog"
 msgstr "Tutup dialog"
 
+#. translators: 1: PHP class name, 2: PHP parent class name, 3: Version number,
+#. 4: __construct() method.
+#: wp-includes/functions.php:5466
+msgid "The called constructor method for %1$s class in %2$s is <strong>deprecated</strong> since version %3$s! Use %4$s instead."
+msgstr "Metode constructor yang ditulis untuk %1$s di %2$s sudah <strong>usang</strong> sejak versi %3$s! Sebagai gantinya, gunakan %4$s."
+
 #: wp-includes/class-wp-customize-manager.php:5219
 msgid "Choose logo"
 msgstr "Memilih logo"
@@ -10391,6 +10512,13 @@ msgstr "Spam"
 msgctxt "comment status"
 msgid "Approved"
 msgstr "Disetujui"
+
+#. translators: 1: templates/index.html, 2: index.php, 3: Documentation URL, 4:
+#. Template, 5: style.css
+#: wp-includes/class-wp-theme.php:351
+#: wp-admin/includes/class-theme-upgrader.php:585
+msgid "Template is missing. Standalone themes need to have a %1$s or %2$s template file. <a href=\"%3$s\">Child themes</a> need to have a %4$s header in the %5$s stylesheet."
+msgstr "Template hilang. Tema harus memiliki berkas template %1$s atau %2$s. <a href=\"%3$s\">Tema turunan</a> harus mempunyai header %4$s di stylesheet %5$s."
 
 #: wp-includes/class-wp-metadata-lazyloader.php:77
 #: wp-includes/class-wp-metadata-lazyloader.php:117
@@ -10647,9 +10775,19 @@ msgstr "Penulis:"
 msgid "Are you sure the database server is not under particularly heavy load?"
 msgstr "Apakah Anda yakin server basis data tidak mengalami beban berat?"
 
+#. translators: %s: Database host.
+#: wp-includes/wp-db.php:1971
+msgid "This means that the contact with the database server at %s was lost. This could mean your host&#8217;s database server is down."
+msgstr "Ini artinya kontak dengan server database di %s telah hilang. Bisa juga berarti server database hosting Anda sedang down."
+
 #: wp-includes/wp-db.php:1967
 msgid "Error reconnecting to the database"
 msgstr "Galat menghubungkan ulang ke basis data"
+
+#. translators: %s: Support forums URL.
+#: wp-includes/wp-db.php:1818 wp-includes/wp-db.php:1982
+msgid "If you are unsure what these terms mean you should probably contact your host. If you still need help you can always visit the <a href=\"%s\">WordPress Support Forums</a>."
+msgstr "Jika Anda tidak yakin apa maksud istilah-istilah berikut, sebaiknya Anda menghubungi hosting Anda. Jika Anda masih butuh bantuan, silakan kunjungi <a href=\"%s\">Forum Bantuan WordPress</a>."
 
 #: wp-includes/wp-db.php:1813 wp-includes/wp-db.php:1976
 msgid "Are you sure the database server is running?"
@@ -10662,6 +10800,16 @@ msgstr "Apakah Anda yakin telah menuliskan nama pengelola dengan tepat?"
 #: wp-includes/wp-db.php:1811
 msgid "Are you sure you have the correct username and password?"
 msgstr "Apakah Anda yakin bahwa nama pengguna dan sandi sudah benar?"
+
+#. translators: 1: wp-config.php, 2: Database host.
+#: wp-includes/wp-db.php:1805
+msgid "This either means that the username and password information in your %1$s file is incorrect or that contact with the database server at %2$s could not be established. This could mean your host&#8217;s database server is down."
+msgstr "Ini berarti bahwa informasi nama pengguna dan kata sandi dalam berkas %1$s Anda salah atau kontak dengan server basis data pada %2$s tidak dapat dibuat. Mungkin server basis data penyedia hosting Anda sedang mati."
+
+#. translators: %s: Support forums URL.
+#: wp-includes/wp-db.php:1213
+msgid "If you do not know how to set up a database you should <strong>contact your host</strong>. If all else fails you may find help at the <a href=\"%s\">WordPress Support Forums</a>."
+msgstr "Jika Anda tidak tahu cara menyiapkan basis data , Anda harus <strong>menghubungi penyedia hosting Anda</strong>. Jika semuanya gagal, Anda mungkin bisa menemukan bantuan pada <a href=\"%s\">Forum Dukungan WordPress</a>."
 
 #. translators: %s: Database name.
 #: wp-includes/wp-db.php:1205
@@ -11179,6 +11327,11 @@ msgstr "Untuk mengatur sandi Anda, kunjungi alamat di bawah ini:"
 #: wp-includes/ms-functions.php:501 wp-includes/user.php:2098
 msgid "Username may not be longer than 60 characters."
 msgstr "Nama pengguna tidak boleh lebih dari 60 karakter."
+
+#. translators: 1: PHP class name, 2: Version number, 3: __construct() method.
+#: wp-includes/functions.php:5478
+msgid "The called constructor method for %1$s class is <strong>deprecated</strong> since version %2$s! Use %3$s instead."
+msgstr "Metode konstruktur yang dipanggil untuk %1$s sudah <strong>usang</strong> sejak versi %2$s! Gunakan %3$s sebagai gantinya."
 
 #: wp-includes/class-wp-editor.php:1147
 msgctxt "HTML tag"
@@ -12352,6 +12505,10 @@ msgstr "Shift-klik untuk menyunting widget ini."
 msgctxt "HTML tag"
 msgid "Address"
 msgstr "Alamat"
+
+#: wp-includes/class-wp-editor.php:1358
+msgid "If you are looking to paste rich content from Microsoft Word, try turning this option off. The editor will clean up text pasted from Word automatically."
+msgstr "Jika Anda ingin menempelkan konten kaya dari Microsoft Word, coba nonaktifkan pilihan ini. Editor akan otomatis menghapus teks yang ditempelkan dari Word."
 
 #: wp-includes/class-wp-editor.php:1393 wp-admin/user-edit.php:327
 msgid "Keyboard Shortcuts"
@@ -15463,6 +15620,10 @@ msgstr "Situs ini %s adalah milik Anda."
 msgid "Create Site"
 msgstr "Buat Situs"
 
+#: wp-signup.php:376
+msgid "If you are not going to use a great site domain, leave it for a new user. Now have at it!"
+msgstr "Jika Anda tidak akan menggunakan domain situs dengan baik, sisakan untuk pengguna baru. Sekarang lanjutkan!"
+
 #: wp-signup.php:365
 msgid "Sites you are already a member of:"
 msgstr "Situs Anda sudah menjadi anggota dari:"
@@ -15598,6 +15759,13 @@ msgstr "Ping balik tersebut telah terdaftar."
 #: wp-includes/class-wp-xmlrpc-server.php:6908
 msgid "The source URL and the target URL cannot both point to the same resource."
 msgstr "URL sumber dan URL target tersebut tidak dapat menunjuk ke sumber yang sama."
+
+#: wp-includes/class-wp-xmlrpc-server.php:6897
+#: wp-includes/class-wp-xmlrpc-server.php:6904
+#: wp-includes/class-wp-xmlrpc-server.php:6913
+#: wp-includes/class-wp-xmlrpc-server.php:7078
+msgid "The specified target URL cannot be used as a target. It either does not exist, or it is not a pingback-enabled resource."
+msgstr "URL target yang diberikan tidak dapat digunakan sebagai target. Hal ini dikarenakan karena target tersebut tidak ditemukan, atau pingback yang tidak diaktifkan."
 
 #: wp-includes/class-wp-xmlrpc-server.php:6857
 msgid "Is there no link to us?"
@@ -16306,6 +16474,10 @@ msgstr "Maaf, alamat email tersebut tidak diperbolehkan!"
 msgid "Sorry, usernames must have letters too!"
 msgstr "Maaf, nama pengguna harus memiliki huruf juga!"
 
+#: wp-includes/ms-functions.php:493
+msgid "You cannot use that email address to signup. There are problems with them blocking some emails from WordPress. Please use another email provider."
+msgstr "Anda tidak dapat menggunakan alamat e-mail tersebut untuk mendaftar. Ada kendala dengan mereka memblokir beberapa e-mail dari WordPress. Mohon gunakan penyedia email lain."
+
 #: wp-includes/ms-functions.php:271
 msgid "That user does not exist."
 msgstr "Pengguna tersebut tidak ada."
@@ -16864,6 +17036,11 @@ msgstr "UTC"
 #: wp-includes/functions.php:6409
 msgid "Select a city"
 msgstr "Pilih sebuah kota"
+
+#. translators: 1: PHP function name, 2: Version number.
+#: wp-includes/functions.php:5669
+msgid "Function %1$s was called with an argument that is <strong>deprecated</strong> since version %2$s with no alternative available."
+msgstr "Fungsi %1$s dipanggil dengan argumen yang <strong>usang</strong> sejak versi %2$s tanpa alternatif yang tersedia."
 
 #. translators: 1: PHP function name, 2: Version number, 3: Optional message
 #. regarding the change.

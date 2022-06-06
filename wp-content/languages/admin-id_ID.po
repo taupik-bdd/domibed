@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 6.0.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-05-31 22:38:54+0000\n"
+"PO-Revision-Date: 2022-06-05 16:07:29+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -34,10 +34,30 @@ msgstr "0"
 msgid "Continue"
 msgstr "Lanjutkan"
 
+#: wp-admin/about.php:303
+msgid "https://make.wordpress.org/core/2022/05/03/wordpress-6-0-field-guide/"
+msgstr "https://make.wordpress.org/core/2022/05/03/wordpress-6-0-field-guide/"
+
 #. translators: %s: WordPress 6.0 Release Notes link.
 #: wp-admin/about.php:313
 msgid "<a href=\"%s\">Read the WordPress 6.0 Release Notes</a> for more information on the included enhancements and issues fixed, installation information, developer notes and resources, release contributors, and the list of file changes in this release."
 msgstr "<a href=\"#\">Baca Catatan Rilis WordPress 6.0</a>untuk informasi lebih lanjut tentang peningkatan yang disertakan dan perbaikan masalah, informasi penginstalan, catatan dan sumber pengembang, kontributor rilis, dan daftar perubahan file dalam rilis ini."
+
+#. translators: %s: WordPress 6.0 Field Guide link.
+#: wp-admin/about.php:302
+msgid "Check out the latest version of the <a href=\"%s\">WordPress Field Guide</a>. It is overflowing with detailed developer notes to help you build with WordPress."
+msgstr "Lihat versi terbaru dari <a href=\"%s\">WordPress Field Guide</a>. Dokumentasi ini menyajikan catatan lengkap dari pengembang untuk membantu Anda membangun sesuatu dengan WordPress."
+
+#. translators: 1: Learn WordPress workshops link, 2: Learn WordPress social
+#. learning link.
+#: wp-admin/about.php:290
+msgid "Explore <a href=\"%1$s\">learn.wordpress.org/&#8203;workshops</a> for quick how-to videos and lots more on new features in WordPress. Or join a live <a href=\"%2$s\">interactive online learning session</a> on a specific WordPress topic."
+msgstr "Jelajahi <a href=\"%1$s\">learn.wordpress.org/&#8203;workshops</a>untuk video cara cepat dan banyak lagi tentang fitur baru di WordPress. Atau bergabunglah dengan <a href=\"%2$s\">sesi pembelajaran online interaktif</a> langsung tentang topik WordPress yang spesifik."
+
+#. translators: %s: 6.0 overview video link.
+#: wp-admin/about.php:276
+msgid "See WordPress 6.0 in action! <a href=\"%s\">Watch a brief overview video</a> highlighting some of the major features debuting in WordPress 6.0."
+msgstr "Lihat kemampuan WordPress 6.0! <a href=\"%s\">Tonton video tinjuan singkat</a> yang menyoroti beberapa fitur utama yang ditambahkan di WordPress 6.0."
 
 #. translators: %s: Version number.
 #: wp-admin/about.php:267
@@ -47,6 +67,28 @@ msgstr "Pelajari lebih lanjut tentang WordPress %s"
 #: wp-admin/about.php:259
 msgid "Exploring WordPress 6.0 video"
 msgstr "Jelajahi video WordPress 6.0"
+
+#: wp-admin/about.php:98
+msgid "More Template Choices"
+msgstr "Lebih Banyak Pilihan Template"
+
+#: wp-admin/includes/ajax-actions.php:1324
+#: wp-admin/includes/ajax-actions.php:1426
+msgid "Please type your comment text."
+msgstr "Silakan ketikkan komentar Anda."
+
+#: wp-admin/includes/post.php:1510
+msgid "Change Permalink Structure"
+msgstr "Ubah Struktur Permalink"
+
+#: wp-admin/includes/meta-boxes.php:709
+msgid "https://wordpress.org/support/article/excerpt/"
+msgstr "https://wordpress.org/support/article/excerpt/"
+
+#: wp-admin/includes/class-theme-installer-skin.php:248
+msgctxt "theme"
+msgid "Active"
+msgstr "Aktif"
 
 #: wp-admin/includes/dashboard.php:2047
 msgid "Learn about block themes"

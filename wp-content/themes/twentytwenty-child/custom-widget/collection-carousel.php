@@ -62,10 +62,10 @@ class Collection_carousel extends Widget_Base
                     ],
 
                     [
-                        'name' => 'textna',
-                        'label' => __('Image Text', 'elementor'),
+                        'name' => 'title',
+                        'label' => __('Tttle', 'elementor'),
                         'type' => \Elementor\Controls_Manager::TEXTAREA,
-                        'placeholder' => __('Type Image Text', 'elementor')
+                        'placeholder' => __('Title', 'elementor')
                     ],
 
                     [
@@ -112,16 +112,17 @@ class Collection_carousel extends Widget_Base
             }
 
             .collection-carousel-wrapper-inner {
-                width: 89%;
-                right: -80px;
+                width: 100%;
                 position: absolute;
                 margin-right: 30px;
+                right: -15vw;
             }
 
             .collection-carousel-group-content {
                 position: relative;
                 width: auto;
                 height: auto;
+                margin: 0 10px;
             }
 
             .collection-carousel-content-title {
@@ -138,17 +139,21 @@ class Collection_carousel extends Widget_Base
             .collection-carousel-content {
                 width: 240px;
                 height: 250px;
+                object-fit: cover;
+                display: flex;
             }
 
             @media only screen and (max-width: 1200px) {
+
+
                 .collection-carousel-wrapper-inner {
                     width: 100%;
-                    right: -12%;
+                    right: -10vw;
                 }
 
                 .collection-carousel-content {
-                    width: 90%;
-                    height: 20%;
+                    width: 100%;
+                    height: 45%;
                 }
             }
         </style>
@@ -157,7 +162,7 @@ class Collection_carousel extends Widget_Base
                 <?php foreach ($settings['list'] as $key => $value) : ?>
                     <div class="collection-carousel-group-content">
                         <img class="collection-carousel-content" src="<?= $value['media']['url']; ?>">
-                        <div class="collection-carousel-content-title"> <?= $value['textna']; ?></div>
+                        <div class="collection-carousel-content-title"> <?= $value['title']; ?></div>
                     </div>
                 <?php endforeach ?>
             </div>

@@ -156,7 +156,7 @@ class Banner_carousel extends Widget_Base
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                padding: 1em 2em;
+                padding: 1em 0 1em 2em;
                 margin: 0 -1% -1.1% 0;
             }
 
@@ -212,6 +212,48 @@ class Banner_carousel extends Widget_Base
                 margin-right: 10px;
             }
 
+            .slick-nav-banner-carousel {
+                width: 100%;
+                height: 100%;
+                margin-top: -2em;
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 4em;
+                margin-top: -2em;
+            }
+
+
+            .navigation-banner-carousel {
+                font-size: 20px;
+                color: #fff;
+                z-index: 2;
+                width: 44px;
+                height: 44px;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 22px;
+                margin-top: -50px;
+
+            }
+
+            .carouselna .slick-dots li button {
+                background-color: #f0f0f0;
+                color: #f0f0f0;
+                opacity: 0.5;
+            }
+
+            .carouselna .slick-dots li.slick-active button {
+                width: 16px;
+                height: 8px;
+                background: #FFFFFF;
+                border-radius: 100px;
+                opacity: 1;
+            }
+
             @media only screen and (max-width: 1200px) {
                 .carousel-text-title {
                     font-size: 5em;
@@ -261,6 +303,14 @@ class Banner_carousel extends Widget_Base
                 <i class="fa-solid fa-chevron-left prev"></i>
                 <i class="fa-solid fa-chevron-right next"></i>
             </div> -->
+            <div class="slick-nav-banner-carousel">
+                <div class=" carouselna-prev bg-secoundary navigation-banner-carousel">
+                    <i class="fa fa-chevron-left "></i>
+                </div>
+                <div class="carouselna-next bg-secoundary navigation-banner-carousel">
+                    <i class="fa fa-chevron-right "></i>
+                </div>
+            </div>
             <div class="carouselna" data-show_d="1" data-show_m="1">
                 <?php foreach ($settings['list'] as $key => $value) : ?>
                     <div class="list-carousel">

@@ -117,7 +117,7 @@
 		left: 0;
 		height: 82px !important;
 		align-items: center;
-		z-index: 10;
+		z-index: 90;
 		background-color: green I !important;
 		margin-top: 3em;
 	}
@@ -177,11 +177,7 @@
 				</div>
 				<div class="header-items-left-logo">
 
-					<?php
-					// Site title or logo.
-					twentytwenty_site_logo();
 
-					?>
 
 				</div>
 				<!-- <ul class="header-items-left-menu mobile-hide">
@@ -193,30 +189,7 @@
 					<li>Bundles</li>
 					<li>Blog</li>
 				</ul> -->
-				<ul class="header-items-left-menu color-primary mobile-hide ">
-					<?php
-					if (has_nav_menu('primary')) {
 
-						wp_nav_menu(
-							array(
-								'container'  => '',
-								'items_wrap' => '%3$s',
-								'theme_location' => 'primary',
-							)
-						);
-					} elseif (!has_nav_menu('expanded')) {
-
-						wp_list_pages(
-							array(
-								'match_menu_classes' => true,
-								'show_sub_menu_icons' => true,
-								'title_li' => false,
-								'walker'   => new TwentyTwenty_Walker_Page(),
-							)
-						);
-					}
-					?>
-				</ul>
 				<div class="header-items-left-search mobile-hide">
 					<input type="text" name="input-search" class="header-items-left-search" placeholder="Search product..." />
 					<i class="fa-solid fa-magnifying-glass icon-search"></i>

@@ -135,6 +135,16 @@ function twentyfifteen_child_widgets_init()
 }
 add_action('widgets_init', 'twentyfifteen_child_widgets_init');
 
+// change text badge sale
+add_filter('woocommerce_sale_flash', 'ds_change_sale_text');
+	function ds_change_sale_text() {
+	return '<span class="onsale">Sale</span>';
+}
+// change position discount price dan price
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 25 );
+
 
 
 

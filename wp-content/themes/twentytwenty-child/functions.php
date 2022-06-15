@@ -14,6 +14,11 @@ function my_theme_enqueue_styles()
 		$theme->parent()->get('Version')
 	);
 
+	wp_enqueue_style( 'style2', get_stylesheet_directory_uri().'/style-2.css',
+		'',
+		$theme->get('Version') // this only works if you have Version in the style header
+	);
+
 	wp_enqueue_style(
 		'child-style',
 		get_stylesheet_uri(),

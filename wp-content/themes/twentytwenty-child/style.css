@@ -7,6 +7,9 @@
 	Text Domain: twentytwenty
 	Template:  twentytwenty
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
 @font-face {
     font-family: Montserrat;
     src: url("/wp-content/themes/twentytwenty-child/fonts/Montserrat-Regular.ttf") format("truetype");
@@ -16,8 +19,6 @@
     font-family: Montserrat_light;
     src: url("/wp-content/themes/twentytwenty-child/fonts/Montserrat-Light.ttf") format("truetype");
 }
-
-
 
 /* color */
 .color-primary{

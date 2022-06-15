@@ -145,6 +145,16 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 25 );
 
+add_action( 'custom_product_name_title', 'custom_product_category_title', 6 );
+function custom_product_category_title(){
+	global $post;
+	$terms = get_the_terms( $post->ID, 'product_cat' );
+	$title = '';
+	foreach ($terms as $term) {
+	   $title = $term->name .' ';
+	}
+	echo "<span>".$title."</span>";
+}
 
 
 

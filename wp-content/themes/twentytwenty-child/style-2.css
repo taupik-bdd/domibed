@@ -1,0 +1,227 @@
+.footer-nav-widgets-wrapper{
+    display: none;
+}
+
+/* footer */
+.menu-footer *,
+.heading-menu-footer,
+.desc-subs,
+.input-newsletter,
+.button-primary-custom,
+.text-copyright-custom {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.footer-menu-custom#site-footer {
+    padding: 0px !important;
+    margin-top: 70px;
+}
+
+#footer_bottom {
+    background: #E99972;
+    padding: 70px 0px;
+}
+
+.menu-footer {
+    list-style: none;
+    margin-left: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.menu-footer a {
+    text-decoration: none !important;
+}
+
+.logo-footer {
+    max-width: 125px;
+}
+
+.menu-item-has-children {
+    margin-left: 0px !important;
+    width: 33.3333%;
+}
+
+#footer_bottom ul.sub-menu {
+    list-style: none;
+    margin-left: 0px;
+    margin-top: 15px;
+}
+
+#footer_bottom ul.sub-menu li {
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+#footer_bottom .menu-item a:not(a + .sub-menu li a),
+.heading-menu-footer {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+
+.menu-footer .sub-menu li a {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+    opacity: 0.8;
+}
+
+.footer-copyright-custom {
+    text-align: center;
+    padding: 25px;
+    background: #DA8A64;
+}
+
+.text-copyright-custom {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #F4BA9F;
+    margin-bottom: 0px;
+}
+
+.heading-menu-footer {
+    margin-bottom: 10px;
+}
+
+.subscription-custom .input-newsletter {
+    background: #F4F4F4;
+    border-radius: 64px;
+    padding: 9px 15px;
+    color: #37373780;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.subscription-custom .input-newsletter:focus-visible,
+.button-primary-custom:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+.button-primary-custom {
+    background: linear-gradient(276.23deg, #4CB8C4 -68.89%, #45B5A5 123.14%);
+    border-radius: 60px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    color: #FFFFFF;
+    padding: 9px 20px 9px 45px;
+    position: relative;
+    text-decoration: none !important;
+}
+
+.desc-subs {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 8px;
+    line-height: 12px;
+    color: #FFFFFF;
+    opacity: 0.7;
+    margin-bottom: 20px;
+}
+
+.list-sosmed {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -8px;
+}
+
+.item-sosmed {
+    padding-left: 8px;
+    max-width: 36px;
+}
+
+.box-img-submit {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 5px;
+    background: white;
+    padding: 8px 7px 6px 6px;
+    border-radius: 50%;
+    max-width: 30px;
+    max-height: 30px;
+    margin: auto;
+}
+
+@media (max-width: 750px) {
+    #footer_bottom ul.sub-menu li:last-child {
+        margin-bottom: 0px;
+    }
+
+    .menu-item-has-children {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+
+    .logo-footer {
+        max-width: 100px;
+        margin-bottom: 50px;
+    }
+
+    #footer_bottom {
+        padding-top: 50px;
+    }
+
+    #footer_bottom .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #footer_bottom .menu-item a:not(a + .sub-menu li a),
+    .heading-menu-footer {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    #footer_bottom ul.sub-menu {
+        margin-top: 10px;
+    }
+
+    .menu-footer .sub-menu li a {
+        font-size: 14px;
+        line-height: 21px;
+    }
+
+    .subscription-custom .input-newsletter {
+        padding: 9px 20px;
+    }
+
+    .desc-subs {
+        margin-bottom: 0px;
+    }
+
+    .footer-copyright-custom {
+        padding: 15px;
+    }
+
+    .text-copyright-custom {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .list-sosmed {
+        margin-left: -5px;
+    }
+
+    .item-sosmed {
+        padding-left: 5px;
+    }
+}
+/* end style */
+
+/* product detail */
+
+/*  */

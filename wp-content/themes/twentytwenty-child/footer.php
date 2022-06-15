@@ -13,54 +13,84 @@
  */
 
 ?>
-<footer id="site-footer" class="header-footer-group">
 
-	<div class="section-inner">
-
-		<div class="footer-credits">
-
-			<p class="footer-copyright">&copy;
-				<?php
-				echo date_i18n(
-					/* translators: Copyright date format, see https://www.php.net/manual/datetime.format.php */
-					_x('Y', 'copyright date format', 'twentytwenty')
-				);
-				?>
-				<a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
-			</p><!-- .footer-copyright -->
-
-			<?php
-			if (function_exists('the_privacy_policy_link')) {
-				the_privacy_policy_link('<p class="privacy-policy">', '</p>');
-			}
-			?>
-
-			<p class="powered-by-wordpress">
-				<a href="<?php echo esc_url(__('https://wordpress.org/', 'twentytwenty')); ?>">
-					<?php _e('Powered by WordPress', 'twentytwenty'); ?>
-				</a>
-			</p><!-- .powered-by-wordpress -->
-
-		</div><!-- .footer-credits -->
-
-		<a class="to-the-top" href="#site-header">
-			<span class="to-the-top-long">
-				<?php
-				/* translators: %s: HTML character for up arrow. */
-				printf(__('To the top %s', 'twentytwenty'), '<span class="arrow" aria-hidden="true">&uarr;</span>');
-				?>
-			</span><!-- .to-the-top-long -->
-			<span class="to-the-top-short">
-				<?php
-				/* translators: %s: HTML character for up arrow. */
-				printf(__('Up %s', 'twentytwenty'), '<span class="arrow" aria-hidden="true">&uarr;</span>');
-				?>
-			</span><!-- .to-the-top-short -->
-		</a><!-- .to-the-top -->
-
-	</div><!-- .section-inner -->
-
+<footer id="site-footer" class="header-footer-group footer-menu-custom">
+	<div class="footer_wrapper">
+		<div id="footer_bottom">
+			<div class="footer-inner-menu">
+				<div class="container">
+					<div class="row footer-custom-row1">
+						<div class="col-md-3 col-sm-12 col-xs-12">
+							<aside id="stm_text-2" class="widget stm_wp_widget_text">
+								<div class="logo-footer">
+									<img src="<?=get_site_url();?>/wp-content/uploads/2022/06/domi-white.png" alt="">
+								</div>
+							</aside>
+						</div>
+						<div class="col-md-6 col-sm-12 mobile-padding-0">
+							<?php
+							wp_nav_menu(
+								array(
+									'theme_location'  => 'footer',
+									'menu_class'      => 'menu-footer',
+									'container_class' => 'secondary-menu-container',
+									'items_wrap'      => '<ul id="secondary-menu-list" class="%2$s">%3$s</ul>',
+									'fallback_cb'     => false,
+								)
+							);
+							?>
+						</div>
+						<div class="col-md-3 col-sm-12 col-xs-12">
+							<div class="heading-menu-footer">STAY IN TOUCH</div>
+							<form action="" class="subscription-custom">
+								<div class="form-group">
+									<input type="text" class="input-newsletter" name="email" placeholder="Your email..">
+								</div>
+								<div class="form-group">
+									<button type="submit" name="submit" class="button-primary-custom">
+										<div class="box-img-submit"><img src="<?=get_site_url();?>/wp-content/uploads/2022/06/newsletter.png" class="icon-submit-newsletter"></div>Subscribe
+									</button>
+								</div>
+							</form>
+							<div class="desc-subs">By submitting this form, you agree to receive recurring automated promotional and personalized marketing text messages (e.g. cart reminders) from Domibed at the cell number used when signing up. Consent is not a condition of any purchase. Reply HELP for help and STOP to cancel. Msg frequency varies. Msg and data rates may apply. View Terms & Privacy.</div>
+							<div class="list-sosmed">
+								<div class="item-sosmed">
+									<a href="" target="_blank">
+										<img src="<?=get_site_url();?>/wp-content/uploads/2022/06/Instagram.png" alt="">
+									</a>
+								</div>
+								<div class="item-sosmed">
+									<a href="" target="_blank">
+										<img src="<?=get_site_url();?>/wp-content/uploads/2022/06/Twitter.png" alt="">
+									</a>
+								</div>
+								<div class="item-sosmed">
+									<a href="" target="_blank">
+										<img src="<?=get_site_url();?>/wp-content/uploads/2022/06/Linkedin.png" alt="">
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright-custom">
+			<div class="container">
+				<p class="text-copyright-custom">©<?php echo date("Y"); ?> Domibed All rights reserved.</p>
+			</div>
+		</div>
+	</div>
 </footer><!-- #site-footer -->
+
+<script>
+	jQuery(document).ready(function() {
+		if(window.matchMedia('(max-width: 750px)').matches){
+			jQuery('#site-footer .menu-footer').append("<li class='menu-item-has-children sosmed-append'><div class='heading-menu-footer'>FOLLOW US</div></li>");
+			jQuery('.sosmed-append').append(jQuery('.list-sosmed'));
+		}
+	})
+</script>
 
 <?php wp_footer(); ?>
 <?php

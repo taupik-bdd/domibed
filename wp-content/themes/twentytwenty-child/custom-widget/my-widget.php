@@ -22,6 +22,8 @@ class My_Elementor_Widgets
         require_once('list-news-and-blogs.php');
         require_once('instagram-feed.php');
         require_once('collection-carousel.php');
+        require_once('sale.php');
+        require_once('testimonial.php');
         //require_once('js-widget.php');
 
         add_action('elementor/widgets/widgets_registered', [$this, 'register_widgets']);
@@ -38,6 +40,9 @@ class My_Elementor_Widgets
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\List_news_and_blogs());
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Instagram_feed());
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Collection_carousel());
+        \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Sale());
+        \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Testimonial());
+
 
         //\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Js_widget());
 

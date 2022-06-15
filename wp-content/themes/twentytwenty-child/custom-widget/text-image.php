@@ -48,7 +48,7 @@ class Text_image extends Widget_Base
             'title-color',
             [
                 'name' => 'title',
-                'label' => __('Title', 'elementor'),
+                'label' => __('Title Color', 'elementor'),
                 'type' => \Elementor\Controls_Manager::TEXT,
                 'placeholder' => __('Type heading', 'elementor')
             ]
@@ -63,13 +63,34 @@ class Text_image extends Widget_Base
             ]
         );
         $this->add_control(
-            'image',
+            'list',
             [
-                'name' => 'media',
-                'label' => __('Media', 'elementor'),
-                'type' => \Elementor\Controls_Manager::MEDIA,
-                'default' => [
-                    'url' => \Elementor\Utils::get_placeholder_image_src()
+                'label' => __('List', 'elementor'),
+                'type' => \Elementor\Controls_Manager::REPEATER,
+                'fields' => [
+                    [
+                        'name' => 'media',
+                        'label' => __('Media', 'elementor'),
+                        'type' => \Elementor\Controls_Manager::MEDIA,
+                        'default' => [
+                            'url' => \Elementor\Utils::get_placeholder_image_src()
+                        ]
+                    ],
+
+                    [
+                        'name' => 'title',
+                        'label' => __('Tttle', 'elementor'),
+                        'type' => \Elementor\Controls_Manager::TEXTAREA,
+                        'placeholder' => __('Title', 'elementor')
+                    ],
+
+                    [
+                        'name' => 'link',
+                        'label' => __('Link', 'elementor'),
+                        'type' => \Elementor\Controls_Manager::URL,
+                        'placeholder' => __('http://your-link.com/', 'elementor')
+                    ],
+
                 ]
             ]
         );
@@ -107,7 +128,7 @@ class Text_image extends Widget_Base
                 width: 100%;
                 height: 100%;
                 position: relative;
-                margin-bottom: 2em;
+                padding: 0 1em;
             }
 
             .text-image-container-inner {
@@ -120,15 +141,27 @@ class Text_image extends Widget_Base
             .text-image-content {
                 width: 40%;
                 height: 100%;
-                padding-right: 10%;
-                padding-top: 5em;
+                padding-right: 5vw;
+                padding-left: 0.3em;
             }
 
-            .text-image-image {
+            .text-image-box {
                 width: 60%;
                 height: 100%;
                 position: absolute;
-                right: 0;
+                right: -15vw;
+            }
+
+            .text-image-content-box {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+
+            }
+
+            .text-image-content-box-image {
+                width: 100%;
+                height: 100%;
             }
 
             .text-image-content-title {
@@ -142,6 +175,59 @@ class Text_image extends Widget_Base
                 margin-top: 2em;
             }
 
+            .carouselna-text-image .slick-dots {
+                display: flex;
+                justify-content: start;
+                margin: 0;
+                padding: 1rem 0;
+                list-style-type: none;
+                position: absolute;
+                left: 0;
+                height: 30px;
+                margin-left: -44.5vw;
+                top: 33em;
+            }
+
+            .carouselna-text-image .slick-dots li button {
+                border-color: #E5E5E5 !important;
+                width: 50px;
+                height: 4px;
+                background: #E5E5E5;
+                border-radius: 50px;
+            }
+
+            .carouselna-text-image .slick-dots li.slick-active button {
+                border-color: #E99972 !important;
+                width: 120px;
+                height: 4px;
+                background: #E99972;
+                border-radius: 50px;
+            }
+
+
+
+
+
+            @media only screen and (max-width: 1200px) {
+
+                .text-image-content {
+                    padding-left: 4em;
+                }
+
+                .text-image-container {
+                    padding: 0 4em;
+                }
+
+                .text-image-box {
+                    right: -2vw;
+                }
+
+                .carouselna-text-image .slick-dots {
+                    margin-left: -36vw;
+                }
+
+            }
+
             @media only screen and (max-width: 800px) {
                 .text-image-container {
                     flex-direction: column-reverse;
@@ -152,7 +238,7 @@ class Text_image extends Widget_Base
                     padding-right: 0;
                 }
 
-                .text-image-image {
+                .text-image-box {
                     width: 100%;
                 }
 
@@ -180,11 +266,26 @@ class Text_image extends Widget_Base
                         </div>
                     <?php } ?>
                 </div>
-                <div class="text-image-image ">
-                    <img src="<?= $settings['image']['url']; ?>">
+                <div class="text-image-box carouselna-text-image ">
+                    <?php foreach ($settings['list'] as $key => $value) : ?>
+                        <div class="text-image-content-box">
+                            <img class="text-image-content-box-image" src="<?= $value['media']['url']; ?>">
+                        </div>
+                    <?php endforeach ?>
                 </div>
             </div>
         </div>
+        <script>
+            jQuery(document).ready(function() {
+                jQuery(".carouselna-text-image").slick({
+                    autoplay: false,
+                    dots: true,
+                    slidesToShow: 1,
+                    nextArrow: false,
+                    prevArrow: false,
+                });
+            })
+        </script>
 <?php
     }
 

@@ -11,9 +11,9 @@ jQuery(document).ready(function () {
         setTimeout(function () {
             jQuery(".carouselna").slick({
                 autoplay: false,
-                dots: false,
-                nextArrow: jQuery(".next"),
-                prevArrow: jQuery(".prev"),
+                dots: true,
+                nextArrow: jQuery(".carouselna-next"),
+                prevArrow: jQuery(".carouselna-prev"),
             });
         }, time);
         jQuery(".carouselna2").slick({
@@ -22,6 +22,17 @@ jQuery(document).ready(function () {
             slidesToShow: 5,
             nextArrow: jQuery(".next"),
             prevArrow: jQuery(".prev"),
+        });
+        setTimeout(function () {
+            jQuery(
+                ".slider-product-sale .elementor-widget-container .product_list_widget"
+            ).slick({
+                autoplay: false,
+                dots: false,
+                slidesToShow: 3,
+                nextArrow: jQuery(".next"),
+                prevArrow: jQuery(".prev"),
+            });
         });
     }, 100);
 });

@@ -14,6 +14,11 @@ function my_theme_enqueue_styles()
 		$theme->parent()->get('Version')
 	);
 
+	wp_enqueue_style( 'style2', get_stylesheet_directory_uri().'/style-2.css',
+		'',
+		$theme->get('Version') // this only works if you have Version in the style header
+	);
+
 	wp_enqueue_style(
 		'child-style',
 		get_stylesheet_uri(),
@@ -134,6 +139,16 @@ function twentyfifteen_child_widgets_init()
 	));
 }
 add_action('widgets_init', 'twentyfifteen_child_widgets_init');
+
+// change text badge sale
+add_filter('woocommerce_sale_flash', 'ds_change_sale_text');
+	function ds_change_sale_text() {
+	return '<span class="onsale">Sale</span>';
+}
+// change position discount price dan price
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 25 );
 
 
 

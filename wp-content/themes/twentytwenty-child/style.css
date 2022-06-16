@@ -7,6 +7,9 @@
 	Text Domain: twentytwenty
 	Template:  twentytwenty
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
 @font-face {
     font-family: Montserrat;
     src: url("/wp-content/themes/twentytwenty-child/fonts/Montserrat-Regular.ttf") format("truetype");
@@ -735,6 +738,7 @@ body:not(.overlay-header) .primary-menu > li > .icon,
     text-decoration: none !important;
 }
 
+<<<<<<< HEAD
 .section-inner {
     display: flex;
     justify-content: space-between;
@@ -1038,4 +1042,64 @@ input[name="input-search"] {
         margin: 0;
         align-items: flex-start;
     }
+=======
+/* -------------------Catalog------------------- */
+
+/* title */
+.woocommerce-products-header h1{
+    font-size: 42px !important;
+    font-weight: 700 !important;
+    font-family: 'Quicksand', sans-serif !important;
+    color: #373737;
+}
+
+/* add to cart */
+.content-area main ul li .add_to_cart_button{
+    display: none;
+}
+
+/* badge sale */
+.content-area main ul li a .onsale{
+    margin: 15px 0 0 15px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    width: 50px;
+    height: 24px;
+    display: flex;
+    padding: 0 !important;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Quicksand', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    color: #EE1A26;
+    text-transform: uppercase;
+}
+
+/* badge product title */
+.content-area main ul li a .woocommerce-loop-product__title{
+    font-family: 'Quicksand', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    color: #373737 !important;
+}
+
+.content-area main ul{
+    background-color: #33A595 !important;
+    width: calc(100% )
+}
+
+/* 3 columns on desktop  product*/
+@media all and (min-width:1024px) {
+	[class*=woocommerce] ul.products li.product {
+	width: 31%!important;
+	margin: 0 30px 2.992em 0!important;
+	clear: none!important;
+	}
+	[class*=woocommerce] ul.products li.product:nth-child(4n) {
+	margin-right:0px!important;
+	}
+	[class*=woocommerce] ul.products li.product:nth-child(4n+1) {
+	clear: both!important;
+	}
 }

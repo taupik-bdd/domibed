@@ -1,15 +1,20 @@
-.footer-nav-widgets-wrapper{
-    display: none;
+button{
+    text-decoration: none !important;
 }
 
-/* footer */
 .menu-footer *,
 .heading-menu-footer,
 .desc-subs,
 .input-newsletter,
 .button-primary-custom,
-.text-copyright-custom {
+.text-copyright-custom,
+h1, h2, h3, h4, h5, h6, p, div, span, input, button, a{
     font-family: 'Quicksand', sans-serif;
+}
+
+/* footer */
+.footer-nav-widgets-wrapper{
+    display: none;
 }
 
 .footer-menu-custom#site-footer {
@@ -240,5 +245,21 @@
 }
 .custom-detail-product .summary.entry-summary {
     width: 100% !important;
+}
+.product_title.entry-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+    color: #373737;
+    margin-bottom: 10px;
+}
+.related.products h2 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 42px;
+    color: #373737;
+    margin-bottom: 30px;
 }
 /* end style */

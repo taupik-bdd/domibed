@@ -104,6 +104,7 @@ if ( post_password_required() ) {
 	</div>
 
 	<?php
+	echo "ini";
 	/**
 	 * Hook: woocommerce_after_single_product_summary.
 	 *
@@ -115,4 +116,4 @@ if ( post_password_required() ) {
 	?>
 </div>
 
-<?php do_action( 'woocommerce_after_single_product' ); ?>
+<?php echo "tesa"; do_action( 'woocommerce_after_single_product' ); ?>

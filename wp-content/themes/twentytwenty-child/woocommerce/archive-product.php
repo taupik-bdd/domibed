@@ -32,7 +32,116 @@ do_action('woocommerce_before_main_content');
 ?>
 <header class="woocommerce-products-header">
 	<?php if (apply_filters('woocommerce_show_page_title', true)) : ?>
+		<style>
+			.hide-content {
+				height: 80px;
+				position: relative;
+				width: 100%;
+				color: transparent;
+				margin-bottom: 65px;
+			}
+
+			.box-sort-wrapper {
+				position: absolute;
+				left: 0;
+				width: 100%;
+				height: 80px;
+				border-bottom-width: 1px;
+				border-top-width: 1px;
+				border-right-width: 0;
+				border-left-width: 0;
+				border-style: solid;
+				border-color: #ECECEC;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+
+			}
+
+			.box-sort-wrapper-inner {
+				width: 1440px;
+				height: 100%;
+				display: flex;
+				align-items: center;
+			}
+
+			.filter-wrapper {
+				background: #F4F4F4;
+				font-size: 20px;
+				font-family: 'Quicksand', sans-serif !important;
+				font-weight: 600;
+				width: 130px;
+				height: 50px;
+				border-width: 0;
+				border-radius: 100px;
+				position: relative;
+				appearance: none;
+				color: #130F26;
+				margin-right: 10px;
+				cursor: pointer;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding-left: 30px;
+			}
+
+			.filter-wrapper-icon {
+				display: flex;
+				left: 24px;
+				align-items: center;
+				height: 100%;
+				position: absolute;
+				cursor: pointer;
+			}
+
+			select[name="sorting"] {
+				background: #F4F4F4;
+				font-size: 20px;
+				font-family: 'Quicksand', sans-serif !important;
+				font-weight: 600;
+				padding: 10px 20px;
+				border-width: 0;
+				border-radius: 100px;
+				color: #130F26;
+				-webkit-appearance: none;
+				-moz-appearance: none;
+
+
+			}
+
+			.select-wrapper {
+				position: relative;
+			}
+
+			.select-wrapper::after {
+				content: "▼";
+				font-size: 1rem;
+				top: 6px;
+				right: 10px;
+				position: absolute;
+			}
+		</style>
 		<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
+		<div class="page-label">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+			A eget sapien nisl egestas purus.
+		</div>
+		<div class="box-sort-wrapper">
+			<div class="box-sort-wrapper-inner">
+				<div class="filter-wrapper"><img src="<?= get_site_url(); ?>/wp-content/uploads/2022/06/Group-1-3.png" class="filter-wrapper-icon " alt="">Filter</div>
+				<form class="woocommerce-ordering-custom" method="get">
+					<select name="sorting" id="cars" class="select-wrapper">
+						<option value="volvo">Sort by</option>
+						<option value="volvo">Volvo</option>
+						<option value="saab">Saab</option>
+						<option value="mercedes">Mercedes</option>
+						<option value="audi">Audi</option>
+					</select>
+				</form>
+			</div>
+		</div>
+		<div class="hide-content">.</div>
 	<?php endif; ?>
 
 	<?php
@@ -103,8 +212,6 @@ if (woocommerce_product_loop()) {
  */
 ?>
 <style>
-	.footer-menu-custom#site-footer {}
-
 	.before-footer {
 		width: 100%;
 		background-color: #F8F8F8;
@@ -161,6 +268,64 @@ if (woocommerce_product_loop()) {
 		color: #262626;
 		opacity: 0.7;
 		margin-top: 5px;
+	}
+
+	@media only screen and (max-width: 1200px) {
+		body {
+			background-color: lightblue;
+		}
+
+		.before-footer {
+			margin-top: -280px;
+		}
+
+		.before-footer-inner {
+			justify-content: space-between;
+		}
+
+		.before-footer-content {
+			margin-top: 20px;
+		}
+	}
+
+	@media only screen and (max-width: 800px) {
+
+		.before-footer {
+			height: 328px;
+		}
+
+		.before-footer {
+			margin-top: -250px;
+		}
+
+		.before-footer-content {
+			align-items: center;
+		}
+
+		.before-footer-inner {
+			justify-content: flex-start;
+			padding: 0 0;
+		}
+
+		.before-footer-desc-title {
+			font-size: 16px;
+		}
+
+		.before-footer-desc-label {
+			font-size: 12px;
+			margin-top: 4px;
+		}
+
+		.before-footer-desc {
+			width: 100%;
+			padding-right: 20px;
+		}
+
+		.before-footer-content-image {
+			height: 44px;
+			width: 44px;
+			margin-right: 20px;
+		}
 	}
 </style>
 <div style="height: 396px; color:transparent;">.</div>

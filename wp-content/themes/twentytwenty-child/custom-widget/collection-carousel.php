@@ -99,64 +99,6 @@ class Collection_carousel extends Widget_Base
 
         $settings = $this->get_settings_for_display();
 ?>
-        <style>
-            <?php include 'wp-content/themes/twentytwenty-child/style.css' ?>
-        </style>
-        <style>
-            .collection-carousel-wrapper {
-                width: 100%;
-                display: flex;
-                height: 200px;
-                position: relative;
-                margin-top: -8em;
-            }
-
-            .collection-carousel-wrapper-inner {
-                width: 100%;
-                position: absolute;
-                margin-right: 30px;
-                right: -15vw;
-            }
-
-            .collection-carousel-group-content {
-                position: relative;
-                width: auto;
-                height: auto;
-                margin: 0 10px;
-            }
-
-            .collection-carousel-content-title {
-                position: absolute;
-                bottom: 10px;
-                left: 10px;
-                font-size: 20px;
-                font-weight: 600;
-                color: #fff;
-                text-transform: capitalize;
-            }
-
-
-            .collection-carousel-content {
-                width: 240px;
-                height: 250px;
-                object-fit: cover;
-                display: flex;
-            }
-
-            @media only screen and (max-width: 1200px) {
-
-
-                .collection-carousel-wrapper-inner {
-                    width: 100%;
-                    right: -10vw;
-                }
-
-                .collection-carousel-content {
-                    width: 100%;
-                    height: 45%;
-                }
-            }
-        </style>
         <div class="collection-carousel-wrapper">
             <div class="carouselna2 collection-carousel-wrapper-inner">
                 <?php foreach ($settings['list'] as $key => $value) : ?>

@@ -1955,6 +1955,7 @@ input[name="input-search"] {
 
 .slick-slide img{
     width: 100%;
+    border-radius: 7px !important;
 }
 
 /* 3 columns on desktop  product*/

@@ -20,6 +20,7 @@
 		max-width: 1440px;
 		padding: 0 50px;
 		background-color: #fff;
+
 	}
 
 	.header-items-left {
@@ -120,6 +121,7 @@
 		z-index: 90;
 		background-color: green I !important;
 		margin-top: 3em;
+		background-color: #fff;
 	}
 
 	@media only screen and (max-width: 800px) {

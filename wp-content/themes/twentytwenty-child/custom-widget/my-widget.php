@@ -24,6 +24,7 @@ class My_Elementor_Widgets
         require_once('collection-carousel.php');
         require_once('sale.php');
         require_once('testimonial.php');
+        require_once('custom_login.php');
         //require_once('js-widget.php');
 
         add_action('elementor/widgets/widgets_registered', [$this, 'register_widgets']);
@@ -42,6 +43,8 @@ class My_Elementor_Widgets
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Collection_carousel());
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Sale());
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Testimonial());
+        \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Testimonial());
+        \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Custom_login());
 
 
         //\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Js_widget());

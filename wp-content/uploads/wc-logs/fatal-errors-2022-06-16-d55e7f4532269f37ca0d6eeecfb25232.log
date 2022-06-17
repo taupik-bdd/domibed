@@ -1,0 +1,64 @@
+2022-06-16T02:34:46+00:00 CRITICAL syntax error, unexpected '<', expecting end of file in C:\xampp\htdocs\domibed\wp-content\themes\twentytwenty-child\header.php on line 216
+
+2022-06-16T08:25:54+00:00 CRITICAL Out of memory (allocated 33554432) (tried to allocate 32768 bytes) in C:\xampp\htdocs\domibed\wp-content\plugins\google-listings-and-ads\vendor\symfony\translation-contracts\TranslatorTrait.php on line 224
+
+2022-06-16T11:53:23+00:00 CRITICAL Cannot redeclare wpce_slider_register_function() (previously declared in C:\xampp\htdocs\domibed\wp-content\plugins\ecommerce-product-carousel-slider-for-elementor\woo-product-slider-for-elementor.php:86) in C:\xampp\htdocs\domibed\wp-content\plugins\carousel-banner\woo-product-slider-for-elementor.php on line 85
+
+2022-06-16T11:53:28+00:00 CRITICAL Cannot redeclare wpce_slider_register_function() (previously declared in C:\xampp\htdocs\domibed\wp-content\plugins\ecommerce-product-carousel-slider-for-elementor\woo-product-slider-for-elementor.php:86) in C:\xampp\htdocs\domibed\wp-content\plugins\carousel-banner\woo-product-slider-for-elementor.php on line 85
+
+2022-06-16T11:53:29+00:00 CRITICAL Cannot redeclare wpce_slider_register_function() (previously declared in C:\xampp\htdocs\domibed\wp-content\plugins\ecommerce-product-carousel-slider-for-elementor\woo-product-slider-for-elementor.php:86) in C:\xampp\htdocs\domibed\wp-content\plugins\carousel-banner\woo-product-slider-for-elementor.php on line 85
+
+2022-06-16T11:57:53+00:00 CRITICAL Uncaught Error: Class 'bdd_Usage_Feedback' not found in C:\xampp\htdocs\domibed\wp-content\plugins\carousel-banner\woo-product-slider-for-elementor.php:89
+Stack trace:
+#0 C:\xampp\htdocs\domibed\wp-includes\class-wp-hook.php(307): bdd_slider_register_function('')
+#1 C:\xampp\htdocs\domibed\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\domibed\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\domibed\wp-settings.php(461): do_action('plugins_loaded')
+#4 C:\xampp\htdocs\domibed\wp-config.php(96): require_once('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\domibed\wp-load.php(50): require_once('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\domibed\wp-admin\admin.php(34): require_once('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\domibed\wp-admin\plugins.php(10): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+  thrown in C:\xampp\htdocs\domibed\wp-content\plugins\carousel-banner\woo-product-slider-for-elementor.php on line 89
+
+2022-06-16T12:04:25+00:00 CRITICAL Uncaught Error: Class 'bdd_Usage_Feedback' not found in C:\xampp\htdocs\domibed\wp-content\plugins\carousel-banner\woo-product-slider-for-elementor.php:89
+Stack trace:
+#0 C:\xampp\htdocs\domibed\wp-includes\class-wp-hook.php(307): bdd_slider_register_function('')
+#1 C:\xampp\htdocs\domibed\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\domibed\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\domibed\wp-settings.php(461): do_action('plugins_loaded')
+#4 C:\xampp\htdocs\domibed\wp-config.php(96): require_once('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\domibed\wp-load.php(50): require_once('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\domibed\wp-admin\admin.php(34): require_once('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\domibed\wp-admin\plugins.php(10): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+  thrown in C:\xampp\htdocs\domibed\wp-content\plugins\carousel-banner\woo-product-slider-for-elementor.php on line 89
+
+2022-06-16T12:05:32+00:00 CRITICAL Uncaught Error: Class 'bdd_Usage_Feedback' not found in C:\xampp\htdocs\domibed\wp-content\plugins\carousel-banner\woo-product-slider-for-elementor.php:89
+Stack trace:
+#0 C:\xampp\htdocs\domibed\wp-includes\class-wp-hook.php(307): bdd_slider_register_function('')
+#1 C:\xampp\htdocs\domibed\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\domibed\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\domibed\wp-settings.php(461): do_action('plugins_loaded')
+#4 C:\xampp\htdocs\domibed\wp-config.php(96): require_once('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\domibed\wp-load.php(50): require_once('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\domibed\wp-admin\admin.php(34): require_once('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\domibed\wp-admin\plugins.php(10): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+  thrown in C:\xampp\htdocs\domibed\wp-content\plugins\carousel-banner\woo-product-slider-for-elementor.php on line 89
+
+2022-06-16T12:07:55+00:00 CRITICAL Uncaught Error: Class 'BDD_Usage_Feedback' not found in C:\xampp\htdocs\domibed\wp-content\plugins\carousel-banner\woo-product-slider-for-elementor.php:89
+Stack trace:
+#0 C:\xampp\htdocs\domibed\wp-includes\class-wp-hook.php(307): bdd_slider_register_function('')
+#1 C:\xampp\htdocs\domibed\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\domibed\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\domibed\wp-settings.php(461): do_action('plugins_loaded')
+#4 C:\xampp\htdocs\domibed\wp-config.php(96): require_once('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\domibed\wp-load.php(50): require_once('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\domibed\wp-admin\admin.php(34): require_once('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\domibed\wp-admin\plugins.php(10): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+  thrown in C:\xampp\htdocs\domibed\wp-content\plugins\carousel-banner\woo-product-slider-for-elementor.php on line 89
+
+2022-06-16T12:13:36+00:00 CRITICAL Cannot declare class WB_BDD\PRODUCT_CAROUSEL\WB_BDD_WIDGET, because the name is already in use in C:\xampp\htdocs\domibed\wp-content\plugins\ecommerce-product-carousel-slider-for-elementor\widgets\woo-product-slider.php on line 12
+

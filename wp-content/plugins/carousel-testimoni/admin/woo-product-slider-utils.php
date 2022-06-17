@@ -1,6 +1,6 @@
 <?php
-namespace WB_BDD;
-use WB_BDD\PRODUCT_CAROUSEL;
+namespace WB_REV;
+use WB_REV\PRODUCT_CAROUSEL;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Do all addon related works
  */
-final class BDD_UTILS {
+final class REV_UTILS {
 	public function __construct(){
 		// Check if Elementor installed and activated
 		if ( ! did_action( 'elementor/loaded' ) ) {
@@ -23,13 +23,13 @@ final class BDD_UTILS {
 		}
 
 		// Check for required Elementor version
-		if ( ! version_compare( ELEMENTOR_VERSION, BDD_MIN_ELEMENTOR_VERSION, '>=' ) ) {
+		if ( ! version_compare( ELEMENTOR_VERSION, REV_MIN_ELEMENTOR_VERSION, '>=' ) ) {
 			add_action( 'admin_notices', [ $this, 'admin_notice_minimum_elementor_version' ] );
 			return;
 		}
 
 		// Check for required PHP version
-		if ( version_compare( PHP_VERSION, BDD_MIN_PHP_VERSION, '<' ) ) {
+		if ( version_compare( PHP_VERSION, REV_MIN_PHP_VERSION, '<' ) ) {
 			add_action( 'admin_notices', [ $this, 'admin_notice_minimum_php_version' ] );
 			return;
 		}
@@ -62,9 +62,9 @@ final class BDD_UTILS {
 		}
 
 		$message = sprintf(
-			esc_html( '"%1$s" requires "%2$s" to be installed and activated.', 'wpce`' ),
-			'<strong>' . esc_html( 'Product Carousel Slider for Elementor', 'wpce`' ) . '</strong>',
-			'<strong>' . esc_html( 'Elementor', 'wpce`' ) . '</strong>'
+			esc_html( '"%1$s" requires "%2$s" to be installed and activated.', 'rev`' ),
+			'<strong>' . esc_html( 'Product Carousel Slider for Elementor', 'rev`' ) . '</strong>',
+			'<strong>' . esc_html( 'Elementor', 'rev`' ) . '</strong>'
 		);
 
 		printf( '<div class="notice notice-error"><p>%1$s</p></div>', $message );
@@ -87,9 +87,9 @@ final class BDD_UTILS {
 		}
 
 		$message = sprintf(
-			esc_html( '"%1$s" requires "%2$s" to be installed and activated.', 'wpce`' ),
-			'<strong>' . esc_html( 'Product Carousel Slider for Elementor', 'wpce`' ) . '</strong>',
-			'<strong>' . esc_html( 'WooCommerce', 'wpce`' ) . '</strong>'
+			esc_html( '"%1$s" requires "%2$s" to be installed and activated.', 'rev`' ),
+			'<strong>' . esc_html( 'Product Carousel Slider for Elementor', 'rev`' ) . '</strong>',
+			'<strong>' . esc_html( 'WooCommerce', 'rev`' ) . '</strong>'
 		);
 
 		printf( '<div class="notice notice-error"><p>%1$s</p></div>', $message );
@@ -113,10 +113,10 @@ final class BDD_UTILS {
 
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
-			esc_html( '"%1$s" requires "%2$s" version %3$s or greater.', 'wpce`' ),
-			'<strong>' . esc_html( 'Product Carousel Slider for Elementor', 'wpce`' ) . '</strong>',
-			'<strong>' . esc_html( 'Elementor', 'wpce`' ) . '</strong>',
-			 BDD_MIN_ELEMENTOR_VERSION
+			esc_html( '"%1$s" requires "%2$s" version %3$s or greater.', 'rev`' ),
+			'<strong>' . esc_html( 'Product Carousel Slider for Elementor', 'rev`' ) . '</strong>',
+			'<strong>' . esc_html( 'Elementor', 'rev`' ) . '</strong>',
+			 REV_MIN_ELEMENTOR_VERSION
 		);
 
 		printf( '<div class="notice notice-error"><p>%1$s</p></div>', $message );
@@ -140,10 +140,10 @@ final class BDD_UTILS {
 
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: PHP 3: Required PHP version */
-			esc_html( '"%1$s" requires "%2$s" version %3$s or greater.', 'wpce`' ),
-			'<strong>' . esc_html( 'Product Carousel Slider for Elementor', 'wpce`' ) . '</strong>',
-			'<strong>' . esc_html( 'PHP', 'wpce`' ) . '</strong>',
-			 BDD_MIN_PHP_VERSION
+			esc_html( '"%1$s" requires "%2$s" version %3$s or greater.', 'rev`' ),
+			'<strong>' . esc_html( 'Product Carousel Slider for Elementor', 'rev`' ) . '</strong>',
+			'<strong>' . esc_html( 'PHP', 'rev`' ) . '</strong>',
+			 REV_MIN_PHP_VERSION
 		);
 
 		printf( '<div class="notice notice-error"><p>%1$s</p></div>', $message );
@@ -161,9 +161,9 @@ final class BDD_UTILS {
 	 */
 	public function enqueue_styles(){
 
-		wp_enqueue_style( 'wb-slick-library', BDD_URL . '/assets/vendors/slick/slick.css', array(), '1.0.0', 'all' );
-		wp_enqueue_style( 'wb-slick-theme', BDD_URL . '/assets/vendors/slick/slick-theme.css', array('wb-slick-library'), '1.0.0', 'all' );
-		wp_enqueue_style( 'wpce-style', BDD_URL . '/assets/css/style.css', array('wb-slick-library','wb-slick-theme'), '1.0.0', 'all' );
+		wp_enqueue_style( 'wbrev-slick-library', REV_URL . '/assets/vendors/slick/slick.css', array(), '1.0.0', 'all' );
+		wp_enqueue_style( 'wbrev-slick-theme', REV_URL . '/assets/vendors/slick/slick-theme.css', array('wbrev-slick-library'), '1.0.0', 'all' );
+		wp_enqueue_style( 'rev-style', REV_URL . '/assets/css/style.css', array('wbrev-slick-library','wbrev-slick-theme'), '1.0.0', 'all' );
 	}
 
 	/**
@@ -177,11 +177,11 @@ final class BDD_UTILS {
 	 */
 	public function admin_scripts_styles(){
 
-		wp_enqueue_style( 'wb-nt-admin-style', BDD_URL . 'admin/assets/css/admin.css', array(), '1.0.0', 'all' );
+		wp_enqueue_style( 'wbrev-nt-admin-style', REV_URL . 'admin/assets/css/admin.css', array(), '1.0.0', 'all' );
 		
-		wp_enqueue_script( 'wb-nt-admin-script', BDD_URL . 'admin/assets/js/admin.js', array('jquery'), '1.0.0', 'all' );
+		wp_enqueue_script( 'wbrev-nt-admin-script', REV_URL . 'admin/assets/js/admin.js', array('jquery'), '1.0.0', 'all' );
 
-		wp_localize_script( 'wb-nt-admin-script', 'wpce_ajax_object',
+		wp_localize_script( 'wbrev-nt-admin-script', 'rev_ajax_object',
             array(
             	'ajax_url' => admin_url( 'admin-ajax.php' ),
             ) 
@@ -199,30 +199,8 @@ final class BDD_UTILS {
 	 */
 	public function enqueue_scripts(){
 
-		wp_enqueue_script( 'wb-slick-library', BDD_URL . 'assets/vendors/slick/slick.min.js', array( 'jquery' ), '1.0.0', true );
-		wp_enqueue_script( 'wpce-main', BDD_URL . 'assets/js/main.js', array( 'wb-slick-library' ), '1.0.0', true );
-
-		//Register FontAwesome for fallback
-		wp_register_style(
-            'font-awesome-5-all',
-            ELEMENTOR_ASSETS_URL . 'lib/font-awesome/css/all.min.css',
-            false,
-            '1.0.0'
-        );
-
-        wp_register_style(
-            'font-awesome-4-shim',
-            ELEMENTOR_ASSETS_URL . 'lib/font-awesome/css/v4-shims.min.css',
-            false,
-            '1.0.0'
-        );
-
-        wp_register_script(
-            'font-awesome-4-shim',
-            ELEMENTOR_ASSETS_URL . 'lib/font-awesome/js/v4-shims.min.js',
-            false,
-            '1.0.0'
-        );
+		wp_enqueue_script( 'wbrev-slick-library', REV_URL . 'assets/vendors/slick/slick.min.js', array( 'jquery' ), '1.0.0', true );
+		wp_enqueue_script( 'rev-main', REV_URL . 'assets/js/main.js', array( 'wbrev-slick-library' ), '1.0.0', true );
 	}
 
 	/**
@@ -250,7 +228,7 @@ final class BDD_UTILS {
 	 */
 	public function includes() {
 
-		require_once( BDD_PATH . '/widgets/woo-product-slider.php' );
+		require_once( REV_PATH . '/widgets/woo-product-slider.php' );
 
 	}
 
@@ -264,8 +242,8 @@ final class BDD_UTILS {
 	 * @access public
 	 */
 	public function register_slider_widgets() {
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new PRODUCT_CAROUSEL\WB_BDD_WIDGET() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new PRODUCT_CAROUSEL\WB_REV_WIDGET() );
 	}
 }
 
-new BDD_UTILS();
+new REV_UTILS();

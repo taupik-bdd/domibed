@@ -1,6 +1,6 @@
 <?php
-if( !function_exists('bdd_get_attachment_alt') ){
-	function bdd_get_attachment_alt( $attachment_id ){
+if( !function_exists('rev_get_attachment_alt') ){
+	function rev_get_attachment_alt( $attachment_id ){
 		if ( ! $attachment_id ) {
 			return '';
 		}
@@ -21,15 +21,15 @@ if( !function_exists('bdd_get_attachment_alt') ){
 	}
 }
 
-if( !function_exists('bdd_get_product_types') ){
-	function bdd_get_product_types(){
+if( !function_exists('rev_get_product_types') ){
+	function rev_get_product_types(){
 		$product_types_lists = wc_get_product_types();
 		return $product_types_lists;
 	}
 }
 
-if( !function_exists('bdd_get_post_status') ){
-	function bdd_get_post_status(){
+if( !function_exists('rev_get_post_status') ){
+	function rev_get_post_status(){
 		$post_statuses = array();
 		$post_statuses['any'] = esc_html__('Any', 'wpce`');
 		$post_statuses = get_post_statuses();
@@ -37,8 +37,8 @@ if( !function_exists('bdd_get_post_status') ){
 	}
 }
 
-if( !function_exists('bdd_get_product_lists') ){
-	function bdd_get_product_lists(){
+if( !function_exists('rev_get_product_lists') ){
+	function rev_get_product_lists(){
 		$product_lists = array();
 		
 		$args = array(
@@ -55,13 +55,13 @@ if( !function_exists('bdd_get_product_lists') ){
 	}
 }
 
-if( !function_exists('bdd_get_product_cats') ){
-	function bdd_get_product_cats( $category='product_cat' ){
+if( !function_exists('rev_get_product_cats') ){
+	function rev_get_product_cats( $category='product_cat' ){
 		$product_categories_list = array();
 		$args = array(
 		    'taxonomy'   => $category,
 		);
-		$args = apply_filters( 'bdd_get_product_cat_args', $args );
+		$args = apply_filters( 'rev_get_product_cat_args', $args );
 		$product_categories = get_terms($args);
 		
 		if( !empty($product_categories) ){
@@ -73,9 +73,9 @@ if( !function_exists('bdd_get_product_cats') ){
 	}
 }
 
-if( !function_exists('bdd_get_excerpt') ){
+if( !function_exists('rev_get_excerpt') ){
 
-	function bdd_get_excerpt( $args = array() ) {
+	function rev_get_excerpt( $args = array() ) {
 
 		// Defaults
 		$defaults = array(
@@ -89,13 +89,13 @@ if( !function_exists('bdd_get_excerpt') ){
 		);
 
 		// Apply filters
-		$defaults = apply_filters( 'bdd_get_excerpt_defaults', $defaults );
+		$defaults = apply_filters( 'rev_get_excerpt_defaults', $defaults );
 
 		// Parse args
 		$args = wp_parse_args( $args, $defaults );
 
 		// Apply filters to args
-		$args = apply_filters( 'bdd_get_excerpt_args', $defaults );
+		$args = apply_filters( 'rev_get_excerpt_args', $defaults );
 
 		// Extract
 		extract( $args );
@@ -133,11 +133,11 @@ if( !function_exists('bdd_get_excerpt') ){
 			}
 		}
 		// Apply filters and echo
-		return apply_filters( 'bdd_get_excerpt', $output );
+		return apply_filters( 'rev_get_excerpt', $output );
 	}
 }
 
-function bdd_display_product_rating( $average, $rating_count, $id ) {
+function rev_display_product_rating( $average, $rating_count, $id ) {
     if ( 0 == $average ) {
 		$html  = '<div class="star-rating">';
 		$html .= wc_get_star_rating_html( $average, $rating_count );

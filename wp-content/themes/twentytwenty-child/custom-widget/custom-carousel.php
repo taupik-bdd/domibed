@@ -25,7 +25,7 @@ class Custom_carousel extends Widget_Base
         return ['basic'];
     }
 
-    protected function _register_controls()
+    protected function register_controls()
     {
 
         $this->start_controls_section(
@@ -126,9 +126,6 @@ class Custom_carousel extends Widget_Base
 
         $settings = $this->get_settings_for_display();
 ?>
-        <style>
-            <?php include 'wp-content/themes/twentytwenty-child/style.css' ?>
-        </style>
         <div class="custom-carousel">
             <?php if ($settings['text'] != NULL) { ?>
                 <div class="heading-block mb-5">

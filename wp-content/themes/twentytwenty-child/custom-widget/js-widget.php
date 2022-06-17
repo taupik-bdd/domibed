@@ -24,7 +24,7 @@ class Js_widget extends Widget_Base{
 		return [ 'button', 'content', 'toggle' ];
 	}
 
-	protected function _register_controls() {
+	protected function register_controls() {
 		// WYSIWYG CONTENT
 		$this->start_controls_section(
 			'content_settings',

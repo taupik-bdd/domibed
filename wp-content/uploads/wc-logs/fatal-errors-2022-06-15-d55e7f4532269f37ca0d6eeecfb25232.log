@@ -6,3 +6,7 @@ Stack trace:
 #3 C:\xampp\htdocs\web-domibed-2\wp-content\plugins\elementor\core\base\base-object.php(142): Elementor\Core\App\Modules\ImportExport\Module->get_init_settings()
 #4 C:\xampp\htdocs\web-domibed-2\wp-content\plugins\elementor\core\base\base-object.php(40): Elementor\Core\Base\Bas in C:\xampp\htdocs\web-domibed-2\wp-content\plugins\elementor\core\app\modules\import-export\module.php on line 399
 
+2022-06-15T09:41:46+00:00 CRITICAL syntax error, unexpected '}', expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in C:\xampp\htdocs\web-domibed-2\wp-content\themes\twentytwenty-child\woocommerce\content-single-product.php on line 69
+
+2022-06-15T09:57:04+00:00 CRITICAL syntax error, unexpected '$itemKe' (T_VARIABLE), expecting ';' or ',' in C:\xampp\htdocs\web-domibed-2\wp-content\themes\twentytwenty-child\woocommerce\content-single-product.php on line 77
+

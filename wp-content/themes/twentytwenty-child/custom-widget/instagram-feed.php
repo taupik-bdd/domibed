@@ -25,7 +25,7 @@ class Instagram_feed extends Widget_Base
         return ['basic'];
     }
 
-    protected function _register_controls()
+    protected function register_controls()
     {
 
         $this->start_controls_section(
@@ -165,115 +165,6 @@ class Instagram_feed extends Widget_Base
 
         $settings = $this->get_settings_for_display();
 ?>
-        <style>
-            <?php include 'wp-content/themes/twentytwenty-child/style.css' ?>
-        </style>
-        <style>
-            .instagram-feed-wrapper {
-                display: flex;
-                justify-content: center;
-                padding: 10em 0;
-                margin-top: -10em;
-            }
-
-            .instagram-feed-content {
-                max-width: 1200px;
-                padding: 0 1em;
-                width: 100%;
-            }
-
-            .instagram-feed-content-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-
-
-            .content-header-title {
-                font-size: 42px;
-                font-weight: 700;
-            }
-
-            .content-header-description {
-                font-size: 16px;
-                font-weight: 500;
-                color: #262626;
-                opacity: 0.7;
-            }
-
-            .instagram-feed-content-content {
-                display: flex;
-                justify-content: space-between;
-                margin-left: -0.5%;
-                margin-top: 4em;
-
-            }
-
-            .instagram-feed-content-content-item {
-                width: 22%;
-                margin: 0 0.5%;
-                position: relative;
-            }
-
-            .instagram-feed-content-button {
-                color: #fff;
-                display: flex;
-                justify-content: flex-start;
-                align-items: center;
-                width: 252px;
-                height: 44px;
-                padding: 0 16px 0 5px;
-                border-radius: 30px;
-                font-size: 14px;
-            }
-
-            .instagram-feed-content-box-icon {
-                height: 34px;
-                width: 34px;
-                border-radius: 17px;
-                background-color: #fff;
-                margin-right: 15px;
-
-            }
-
-            .instagram-feed-content-content-box-icon {
-                position: absolute;
-                height: 42px;
-                width: 42px;
-                border-radius: 21px;
-                background-color: #fff;
-                top: 15px;
-                left: 15px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            @media only screen and (max-width: 1200px) {}
-
-            @media only screen and (max-width: 800px) {
-                .instagram-feed-wrapper {
-                    padding: 5em 0;
-                }
-
-                .instagram-feed-content-header {
-                    flex-direction: column;
-                }
-
-                .content-header-title {
-                    text-align: center;
-                }
-
-                .content-header-description {
-                    text-align: center;
-                }
-
-                .instagram-feed-content-button {
-                    margin-top: 1em;
-                }
-
-            }
-        </style>
         <div class="instagram-feed-wrapper">
             <div class="instagram-feed-content">
                 <div class="instagram-feed-content-header">

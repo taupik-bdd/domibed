@@ -138,67 +138,6 @@ class List_news_and_blogs extends Widget_Base
 
         $settings = $this->get_settings_for_display();
 ?>
-        <style>
-            <?php include 'wp-content/themes/twentytwenty-child/style.css' ?>
-        </style>
-        <style>
-            .list-item-wrapper {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-            }
-
-            .list-item-wrapper-items {
-                display: flex;
-                justify-content: space-between;
-                flex-wrap: wrap;
-            }
-
-            .list-item-wrapper-item-group {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                width: 30%;
-            }
-
-            .list-item-text-heading {
-                font-size: 42px;
-                margin-bottom: 1em;
-                font-weight: 700;
-            }
-
-            .list-item-text-date {
-                font-size: 14px;
-                margin-top: 15px;
-                color: #838383;
-            }
-
-            .list-item-text-title {
-                margin-top: -0.5em;
-                font-size: 18px;
-                font-weight: 600;
-            }
-
-            .list-item-text-description {
-                margin-top: -0.5em;
-                font-size: 16px;
-                color: #6F6F6F;
-            }
-
-            @media only screen and (max-width: 1200px) {}
-
-            @media only screen and (max-width: 800px) {
-                .list-item-wrapper-items {
-                    flex-direction: column;
-                }
-
-                .list-item-wrapper-item-group {
-                    width: 100%;
-                    margin-bottom: 1em;
-                }
-            }
-        </style>
         <div class="list-item-wrapper">
             <?php if ($settings['text'] != NULL) { ?>
                 <div class="list-item-text-heading">

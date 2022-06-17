@@ -25,7 +25,7 @@ class Feature_custom extends Widget_Base
         return ['basic'];
     }
 
-    protected function _register_controls()
+    protected function register_controls()
     {
 
         $this->start_controls_section(
@@ -150,111 +150,6 @@ class Feature_custom extends Widget_Base
 
         $settings = $this->get_settings_for_display();
 ?>
-        <style>
-            <?php include 'wp-content/themes/twentytwenty-child/style.css' ?>
-        </style>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
-        <style>
-            .feature-custom {
-                margin-top: -10em;
-                font-family: 'Quicksand', sans-serif;
-            }
-
-            .feature-custom-gorup-title {
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                text-align: center;
-                flex-direction: column;
-
-            }
-
-            .feature-custom-title {
-                font-size: 42px;
-                font-weight: 700;
-                font-family: 'Quicksand', sans-serif;
-            }
-
-            .feature-custom-description {
-                font-size: 16px;
-                font-weight: 500;
-                font-family: 'Quicksand', sans-serif;
-                display: flex;
-                justify-content: center;
-            }
-
-            .feature-custom-description-items {
-                max-width: 690px;
-            }
-
-            .feature-custom-gorup-items {
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
-                margin-top: 75px;
-            }
-
-            .feature-custom-box-image {
-                width: 32%;
-                margin: 0.4%;
-                margin-bottom: 50px;
-                display: flex;
-                align-items: center;
-            }
-
-            .feature-custom-image {
-                height: 100px;
-                width: 100px;
-                object-fit: cover;
-                max-width: 80px;
-                min-height: 80px;
-            }
-
-            .feature-custom-box-content {
-                display: flex;
-                flex-direction: column;
-                height: 80px;
-                padding: 2px 20px;
-                justify-content: space-between;
-
-
-            }
-
-            .feature-custom-content-title {
-                font-size: 20px;
-                font-weight: 600;
-            }
-
-            .feature-custom-content-description {
-                font-size: 14px;
-                font-weight: 500;
-                color: #262626;
-            }
-
-            @media only screen and (max-width: 1200px) {
-                .feature-custom-box-image {
-                    width: 28%;
-                    margin: 0.4%;
-                    margin-bottom: 50px;
-                    display: flex;
-                    align-items: center;
-                }
-            }
-
-            @media only screen and (max-width: 800px) {
-                .feature-custom-title {
-                    font-size: 3em;
-                }
-
-                .feature-custom-box-image {
-                    width: 100%;
-                    margin: 0;
-                    margin-bottom: 20px;
-                }
-            }
-        </style>
         <div class="feature-custom">
             <div class="feature-custom-gorup-title">
                 <?php if ($settings['text'] != NULL) { ?>

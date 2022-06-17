@@ -25,7 +25,7 @@ class Collection_carousel extends Widget_Base
         return ['basic'];
     }
 
-    protected function _register_controls()
+    protected function register_controls()
     {
 
         $this->start_controls_section(
@@ -100,7 +100,7 @@ class Collection_carousel extends Widget_Base
         $settings = $this->get_settings_for_display();
 ?>
         <div class="collection-carousel-wrapper">
-            <div class="carouselna2 collection-carousel-wrapper-inner">
+            <div class="slick-carousel collection-carousel-wrapper-inner">
                 <?php foreach ($settings['list'] as $key => $value) : ?>
                     <div class="collection-carousel-group-content">
                         <img class="collection-carousel-content" src="<?= $value['media']['url']; ?>">

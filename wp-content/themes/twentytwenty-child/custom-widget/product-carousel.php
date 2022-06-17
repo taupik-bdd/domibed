@@ -25,7 +25,7 @@ class Product_carousel extends Widget_Base
         return ['basic'];
     }
 
-    protected function _register_controls()
+    protected function register_controls()
     {
 
         $this->start_controls_section(

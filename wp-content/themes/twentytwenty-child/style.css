@@ -36,7 +36,28 @@
     background-color:#33A595 !important;
 }
 
+.elementor-section.elementor-section-boxed > .elementor-container{
+    max-width: 100%;
+    padding-right: 85px;
+    padding-left: 85px;
+}
+:root {
+    --width--full-right: calc(100vh * 0.8);
+}
 
+.elementor-section.right-full{
+    padding-top: 0px;
+}
+.elementor-section.right-full > .elementor-container{
+    max-width: calc(100% - 85px);
+    padding-left: 85px;
+    margin-right: unset;
+}
+
+.elementor-section.right-full .elementor-column-gap-default>
+.elementor-column:last-child>.elementor-element-populated{
+    padding-right: unset;
+}
 header, body, div, h1,h2,h3,h4,h5,
 .widget_text p, .widget_text ol, 
 .widget_text ul, .widget_text dl, 
@@ -49,25 +70,33 @@ section.top-no-gap, .post-inner{
     padding-bottom: 0px;
 }
 
-
-.list-carousel .content-carousel span{
-    top: 40%;
-    text-align: center;
-    margin: auto;
-    display: block;
-    width: 100%;
-    position: absolute;
-
+.wpce_content a{
+    font-size: 16px !important;
+    line-height: 22px !important;
+    color: #373737 !important;
 }
-.list-carousel .content-carousel .text-button{
-    top: 50%;
-    text-align: center;
-    margin: auto;
-    /* display: block; */
-    width: 100px;
-    right: 0;
-    left: 0;
-    position: absolute;
+
+.wpce_price del bdi{
+    color: #33A595 !important;
+    font-size: 18px !important;
+}
+
+.wpce_price ins span bdi{
+    color: #989898 !important;
+    font-size: 16px !important;
+}
+
+.wpce_price span bdi{
+    color: #373737 !important;
+}
+
+.wpce_single_item,
+.wpce_thumbnail img{
+    box-shadow: none !important;
+}
+
+.list-carousel{
+    padding-right: 5px;
 }
 .content-carousel{
     position: relative;
@@ -204,22 +233,22 @@ body:not(.overlay-header) .primary-menu > li > .icon,
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+}
   
-  .navigation-circle {
+.navigation-circle {
     display: block;
     position: relative;
     height: 320px;
     width: 320px;
     margin: auto;
-  }
-  .navigation-circle__inner {
+}
+.navigation-circle__inner {
     display: block;
     position: relative;
     height: 100%;
     width: 100%;
-  }
-  .navigation-circle__list {
+}
+.navigation-circle__list {
     display: block;
     position: absolute;
     height: 330px;
@@ -849,10 +878,8 @@ input[name="input-search"] {
     align-items: center;
     z-index: 90;
     background-color: green I !important;
-    margin-top: 3em;
+    margin-top: 0;
 }
-
-.custom-carousel-custom {}
 
 .banner-content-carousel {
     display: flex;
@@ -1613,6 +1640,36 @@ input[name="input-search"] {
     background: #E99972;
     border-radius: 50px;
 }
+
+.bdd_slider_wrapper .list-carousel a{
+    position: relative;
+}
+
+.bdd_slider_wrapper .list-carousel a span{
+    position: absolute;
+    bottom: 20px;
+    margin-left: 25px;
+    font-size: 24px;
+    color: #fff;
+    font-family: 'Quicksand';
+}
+
+.wpce_content{
+    text-align: left !important;
+    padding: 0 0 0 0 !important;
+    line-height: 22px !important;
+    font-size: 16px !important;
+    font-family: 'Quicksand' !important;
+}
+
+.wpce_title h2{
+    margin-bottom: 0px !important;
+    color: #373737 !important;
+}
+.wpce_title h3 a{
+    color: #838383 !important;    
+}
+
 @media only screen and (max-width: 1200px) {
     .text-image-content {
         padding-left: 4em;
@@ -1879,6 +1936,25 @@ input[name="input-search"] {
 .content-area main ul{
     background-color: #33A595 !important;
     width: calc(100% )
+}
+
+.elementor-button-content-wrapper > span > i{
+    color: #33A595;
+    background: white;
+    padding: 5px;
+    border-radius: 50px;
+}
+
+.elementor-button-content-wrapper .elementor-button-text{
+    padding-top: 4px;
+}
+
+.slick-list{
+    padding-left: 0px!important;
+}
+
+.slick-slide img{
+    width: 100%;
 }
 
 /* 3 columns on desktop  product*/

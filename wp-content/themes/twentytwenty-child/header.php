@@ -17,7 +17,7 @@
 	?>
 	<header id="site-header" class=" header-custom">
 		<div class="header-inner section-inner">
-			<div class="header-items-left">
+			<div class="header-items-left" style="width: 100%;">
 				<div class="header-items-menu-mobile" id="menu-mobile" name="menu-mobile">
 					<i class=" fa-solid fa-bars mobile-icon-menu" onclick="onClickMenu()"></i>
 				</div>
@@ -32,7 +32,7 @@
 				<?php
 				if (has_nav_menu('primary') || !has_nav_menu('expanded')) {
 				?>
-					<ul class="header-items-left-menu mobile-hide">
+					<ul class="header-items-left-menu mobile-hide nav-header" data-is-show="1">
 						<?php
 						if (has_nav_menu('primary')) {
 							wp_nav_menu(
@@ -56,13 +56,19 @@
 					</ul>
 				<?php
 				}?>
-
+				<form role="search" aria-label="Search for:" method="get" class="search-form" action="https://twentytwentydemo.org/" style="display: none; width: 100%;"> 
+					<label for="search-form-1"> 
+						<span class="screen-reader-text">Search for:</span> 
+						<input type="search" id="search-form-1" class="search-field" placeholder="Search &hellip;" value="" name="s" /> 
+					</label> 
+					<input type="submit" class="search-submit" value="Search" />
+				</form>
 			</div>
 			<div class="header-items-right">
-				<i class="fa-solid fa-magnifying-glass header-items-right-items "></i>
-				<i class="fa-solid fa-user header-items-right-items "></i>
+				<a href="#" onclick="search_form()"><i class="fa-solid fa-magnifying-glass header-items-right-items "></i></a>
+				<a href="/my-account"><i class="fa-solid fa-user header-items-right-items "></i></a>
 				<i class="fa-solid fa-heart header-items-right-items"></i>
-				<i class="fa-solid fa-bag-shopping header-items-right-items"></i>
+				<a href="/cart"><i class="fa-solid fa-bag-shopping header-items-right-items"></i></a>
 			</div>
 		</div>
 		<!-- .header-inner -->
@@ -91,18 +97,19 @@
 	</header><!-- #site-header -->
 
 	<script>
-		// function onClickMenu() {
-		// 	alert('cja');
-		// 	$(".modal-mobile-menu").css("display", "flex");
-		// }
-
-
-		// $(function() {
-		// 	$("menu-mobile").on('click', function() {
-		// 		alert("Success !!!");
-
-		// 	})
-		// })
+		function search_form(){
+			if (jQuery('.nav-header').data('is-show') == 1) {
+				jQuery(".nav-header" ).slideToggle( "slow", function() {
+					jQuery(".search-form" ).toggle();
+					jQuery('.nav-header').data('is-show', 0);
+				});
+			}else{
+				jQuery(".search-form" ).slideToggle( "slow", function() {
+					jQuery(".nav-header" ).toggle();
+					jQuery('.nav-header').data('is-show', 0);
+				});
+			}
+		}
 	</script>
 
 	<?php

@@ -41,17 +41,15 @@
     padding-right: 85px;
     padding-left: 85px;
 }
-:root {
-    --width--full-right: calc(100vh * 0.8);
-}
 
-.elementor-section.right-full{
-    padding-top: 0px;
-}
 .elementor-section.right-full > .elementor-container{
     max-width: calc(100% - 85px);
     padding-left: 85px;
     margin-right: unset;
+}
+
+.elementor-section.right-full{
+    padding-top: 0px;
 }
 
 .elementor-section.right-full .elementor-column-gap-default>
@@ -1741,6 +1739,17 @@ input[name="input-search"] {
 }
 
 @media only screen and (max-width: 800px) {
+    .elementor-section.elementor-section-boxed > .elementor-container{
+        max-width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .elementor-section.right-full > .elementor-container{
+        max-width: calc(100% - 15px);
+        padding-left: 15px;
+        margin-right: unset;
+    }
     .text-image-container {
         flex-direction: column-reverse;
     }

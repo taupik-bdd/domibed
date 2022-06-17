@@ -814,6 +814,14 @@ body:not(.overlay-header) .primary-menu > li > .icon,
     color: #373737 !important;
 }
 
+/* badge product category */
+.product-category{
+    font-family: 'Quicksand', sans-serif !important;
+    font-weight: 500;
+    font-size: 16px;
+    color: #838383;
+}
+
 /* 3 columns on desktop  product*/
 .content-area main ul{
     width: calc(100% )
@@ -832,6 +840,7 @@ body:not(.overlay-header) .primary-menu > li > .icon,
     display: flex !important;
     flex-direction: row-reverse !important;
     justify-content: flex-end !important;
+    margin-top: 10px;
 }
 
 .content-area main ul li a .price ins{

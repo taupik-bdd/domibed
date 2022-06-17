@@ -14,7 +14,9 @@ function my_theme_enqueue_styles()
 		$theme->parent()->get('Version')
 	);
 
-	wp_enqueue_style( 'style2', get_stylesheet_directory_uri().'/style-2.css',
+	wp_enqueue_style(
+		'style2',
+		get_stylesheet_directory_uri() . '/style-2.css',
 		'',
 		$theme->get('Version') // this only works if you have Version in the style header
 	);
@@ -142,23 +144,33 @@ add_action('widgets_init', 'twentyfifteen_child_widgets_init');
 
 // change text badge sale
 add_filter('woocommerce_sale_flash', 'ds_change_sale_text');
-	function ds_change_sale_text() {
+function ds_change_sale_text()
+{
 	return '<span class="onsale">Sale</span>';
 }
 // change position discount price dan price
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
 
-add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 25 );
+add_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 25);
 
-add_action( 'custom_product_name_title', 'custom_product_category_title', 6 );
-function custom_product_category_title(){
+add_action('custom_product_name_title', 'custom_product_category_title', 6);
+function custom_product_category_title()
+{
 	global $post;
-	$terms = get_the_terms( $post->ID, 'product_cat' );
+	$terms = get_the_terms($post->ID, 'product_cat');
 	$title = '';
 	foreach ($terms as $term) {
-	   $title = $term->name .' ';
+		$title = $term->name . ' ';
 	}
-	echo "<span>".$title."</span>";
+	echo "<span>" . $title . "</span>";
+}
+
+add_action('woocommerce_before_shop_loop', 'show_category_title', 10, 2);
+
+function show_category_title()
+{
+	$cat_title = single_tag_title("", false);
+	echo '<h1>' . $cat_title . '</h1>';
 }
 
 

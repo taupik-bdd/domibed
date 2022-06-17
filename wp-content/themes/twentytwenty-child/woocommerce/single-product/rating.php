@@ -29,15 +29,41 @@ $rating_count = $product->get_rating_count();
 $review_count = $product->get_review_count();
 $average      = $product->get_average_rating();
 
-if ( $rating_count > 0 ) : ?>
 
+if ( $rating_count > 0 ) : ?>
+<style>
+	:root {
+		--star-size: 60px;
+		--star-color: #fff;
+		--star-background: #fc0;
+		--rating: ;
+	}
+	.rating-outer {
+		--percent: calc(var(--rating) / 5 * 100%);
+		display: inline-block;
+		font-size: 26px;
+		font-family: Times !important;
+		line-height: 1;
+	}
+	.rating-outer:before {
+		background: linear-gradient(90deg, #33A595 var(--percent), #C4C4C4 var(--percent));
+		content: '★★★★★';
+		letter-spacing: 3px;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+</style>
 	<div class="woocommerce-product-rating">
-		<?php echo wc_get_rating_html( $average, $rating_count ); // WPCS: XSS ok. ?>
+		<?php //echo wc_get_rating_html( $average, $rating_count ); // WPCS: XSS ok. ?>
+		<div class="custom-rating">
+			<div class="rating-outer" style="--rating: <?=$average;?>;"></div>
+			<div class="rating-bottom"></div>
+		</div>
+		
 		<?php if ( comments_open() ) : ?>
 			<?php //phpcs:disable ?>
-			<a href="#reviews" class="woocommerce-review-link" rel="nofollow">(<?php printf( _n( '%s customer review', '%s customer reviews', $review_count, 'woocommerce' ), '<span class="count">' . esc_html( $review_count ) . '</span>' ); ?>)</a>
+			<a href="#reviews" class="woocommerce-review-link" rel="nofollow"><?php printf( _n( '%s customer review', '%s customer reviews', $review_count, 'woocommerce' ), '<span class="count">' . esc_html( $review_count ) . '</span>' ); ?></a>
 			<?php // phpcs:enable ?>
 		<?php endif ?>
 	</div>
-
 <?php endif; ?>

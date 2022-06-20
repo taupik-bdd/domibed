@@ -772,7 +772,7 @@ if (woocommerce_product_loop()) {
 					}
 				}
 
-				//Filter Category
+				//Filter Category12
 				let url_price = ''
 				if (document.querySelector('input[name="price"]:checked')) {
 					let price_selected = document.querySelector('input[name="price"]:checked').value.toLowerCase();

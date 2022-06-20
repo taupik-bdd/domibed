@@ -243,7 +243,7 @@ do_action('woocommerce_before_main_content');
 
 			.checkmark {
 				position: absolute;
-				top: 4px;
+				top: 3.5px;
 				left: 0;
 				height: 16px;
 				width: 16px;
@@ -396,7 +396,7 @@ do_action('woocommerce_before_main_content');
 								$name_category =  $cat->name;
 								echo "<label class='radio-button-group'>";
 								echo $name_category;
-								echo "<input type='radio' id='category' name='category' value='HTML'>";
+								echo "<input type='radio' id='category' name='category' value=${name_category}>";
 								echo " <span class='checkmark'></span>";
 								echo "</label>";
 							}
@@ -439,15 +439,15 @@ do_action('woocommerce_before_main_content');
 						</div>
 						<div class="modal-filter-group-filter">
 							<label class='radio-button-group radio-button-group-single'>Rp 1.0jt - Rp 2.0jt
-								<input type='radio' id='price' name='price' value='1000000'>
+								<input type='radio' id='price' name='price' value='100,2000000'>
 								<span class='checkmark'></span>
 							</label>
 							<label class='radio-button-group radio-button-group-single'>Rp 2.0jt - Rp 3.0jt
-								<input type='radio' id='price' name='price' value='2000000'>
+								<input type='radio' id='price' name='price' value='2000000,3000000'>
 								<span class='checkmark'></span>
 							</label>
-							<label class='radio-button-group radio-button-group-single'>Rp 3.0jt - Rp 4.0jt
-								<input type='radio' id='price' name='price' value='3000000'>
+							<label class='radio-button-group radio-button-group-single'>Rp 3.0jt - Rp 5.0jt
+								<input type='radio' id='price' name='price' value='3000000,5000000'>
 								<span class='checkmark'></span>
 							</label>
 						</div>
@@ -731,7 +731,44 @@ if (woocommerce_product_loop()) {
 			}
 
 			function onChangeResult() {
-				document.getElementById("modal-filter").style.display = "none";
+				// document.getElementById("modal-filter").style.display = "none";
+				let current_url = window.location.href;
+
+				if (current_url.includes("shop")) {
+					let category = current_url.split('shop')
+					let new_url = category[0];
+					let url_category = ''
+					let category_selected = null
+					if (document.querySelector('input[name="category"]:checked')) {
+						category_selected = document.querySelector('input[name="category"]:checked').value.toLowerCase()
+						if (category_selected) {
+							url_category = `/product-category/${category_selected}`
+						} else {
+							url_category = ''
+						}
+					}
+					let url_price = ''
+					if (document.querySelector('input[name="price"]:checked')) {
+						let price_selected = document.querySelector('input[name="price"]:checked').value.toLowerCase();
+						let split_price = price_selected.split(',')
+						let url_price_before = ''
+						if (category_selected) {
+							url_price_before = `?min_price=${split_price[0]}&max_price=${split_price[1]}`
+						} else {
+							url_price_before = `shop?min_price=${split_price[0]}&max_price=${split_price[1]}`
+						}
+
+						if (url_price_before) {
+							url_price = url_price_before
+						} else {
+							url_price = ''
+						}
+					}
+
+					window.location.href = new_url + url_category + url_price
+				} else {
+					console.log('tidak masuk')
+				}
 			}
 
 			function onOpenModalSorting() {
@@ -745,13 +782,18 @@ if (woocommerce_product_loop()) {
 
 
 
-			// window.addEventListener('click', function(e) {
-			// 	if (document.getElementById('modal-filter').contains(e.target)) {
-
-			// 	} else {
-			// 		document.getElementById("modal-filter").style.display = "none";
-			// 	}
-			// });
+			document.addEventListener('mouseup', function(e) {
+				var container = document.getElementById('modal-filter');
+				if (!container.contains(e.target)) {
+					document.getElementById("modal-filter").style.display = "none";
+				}
+			});
+			document.addEventListener('mouseup', function(e) {
+				var container = document.getElementById('modal-sorting');
+				if (!container.contains(e.target)) {
+					document.getElementById("modal-sorting").style.display = "none";
+				}
+			});
 		</script>
 
 
